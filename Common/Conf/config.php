@@ -1,4 +1,23 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
+
+    // 是否允许多模块 如果为false 则必须设置 DEFAULT_MODULE
+    'MULTI_MODULE'          =>  true,
+
+    //设置前台默认模板
+    'DEFAULT_MODULE' => 'Index',
+
+
+    //数据库配置
+    'DB_TYPE' => 'mysql',     // 数据库类型
+    'DB_HOST' => 'localhost', // 服务器地址
+    'DB_NAME' => 'sino-inno',          // 数据库名
+    'DB_USER' => 'root',      // 用户名
+    'DB_PWD' => 'root',          // 密码
+    'DB_PORT' => '3306',        // 端口
+    'DB_PREFIX' => 'sino_',    // 数据库表前缀
+    'DB_CHARSET' => 'utf8',     // 数据库编码默认采用utf8
+
+    //'TMPL_EXCEPTION_FILE'   =>  './Common/error.php',// 异常页面的模板文件
 );
