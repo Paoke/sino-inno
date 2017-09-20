@@ -3,7 +3,7 @@ function upload(cls){
     if($("#form"+cls).length>0){
 
     }else{
-        $("."+cls).wrap("<form id='form"+cls+"' action='/index.php/Admin/View/uploadPic?type="+cls+"' method='post' enctype='multipart/form-data'></form>");
+        $("."+cls).wrap("<form id='form"+cls+"' action='/index.php/Admin/Api/uploadPic?type="+cls+"' method='post' enctype='multipart/form-data'></form>");
     }
 
     $("#form"+cls).ajaxSubmit({

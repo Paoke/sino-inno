@@ -74,9 +74,9 @@
             </dt>
             <dd>
                 <ul>
-                    <li><a _href="__MODULE__/Basic/bannerList" data-title="首页Banner图列表" href="javascript:void(0)">首页Banner图列表</a></li>
-                    <li><a _href="__MODULE__/Basic/wordList" data-title="栏目文字设置" href="javascript:void(0)">栏目文字设置</a></li>
-
+                    <li><a _href="__MODULE__/Setup/bannerList" data-title="首页Banner图列表" href="javascript:void(0)">首页Banner图列表</a></li>
+                    <li><a data-title="底部文字设置" href="javascript:void(0)" onclick="edit_word('底部文字设置', '__MODULE__/Setup/editWord', '900', '450')">底部文字设置</a></li>
+                    <li><a _href="__MODULE__/Setup/cooperationList" data-title="合作机构列表" href="javascript:void(0)">合作机构列表</a></li>
                 </ul>
             </dd>
         </dl>
@@ -176,6 +176,10 @@
     }
     /*用户-修改密码*/
     function change_password(title, url, id, w, h){
+        layer_show(title, url, w, h);
+    }
+
+    function edit_word(title, url, w, h){
         layer_show(title, url, w, h);
     }
 
