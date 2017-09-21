@@ -81,18 +81,19 @@
             </dd>
         </dl>
         <dl id="menu-product">
-            <dt><i class="Hui-iconfont">&#xe616;</i> 案例文章管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dt><i class="Hui-iconfont">&#xe616;</i> 文章管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="/index.php/Admin/Case/articleList" data-title="文章列表" href="javascript:void(0)">文章列表</a></li>
+                    <li><a _href="/index.php/Admin/Article/categoryList" data-title="文章分类" href="javascript:void(0)">文章分类</a></li>
+                    <li><a _href="/index.php/Admin/Article/articleList" data-title="文章列表" href="javascript:void(0)">文章列表</a></li>
                 </ul>
             </dd>
         </dl>
         <dl id="menu-picture">
-            <dt><i class="Hui-iconfont">&#xe63e;</i> 视野文章管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dt><i class="Hui-iconfont">&#xe63e;</i> 活动管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="/index.php/Admin/View/articleList" data-title="文章列表" href="javascript:void(0)">文章列表</a></li>
+                    <li><a _href="/index.php/Admin/Activity/activityList" data-title="活动列表" href="javascript:void(0)">活动列表</a></li>
                 </ul>
             </dd>
         </dl>

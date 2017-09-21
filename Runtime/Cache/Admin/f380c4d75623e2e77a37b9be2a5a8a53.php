@@ -25,34 +25,28 @@
     <title>中创产业研究院后台</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 基本设置 <span
-        class="c-gray en">&gt;</span> 合作机构列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 文章管理 <span
+        class="c-gray en">&gt;</span> 文章分类列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
                                               href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">
     &#xe68f;</i></a></nav>
 <div class="page-container">
     
-    <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l"><a class="btn btn-primary radius" data-title="添加机构" href="javascript:;"
-                                                               onclick="member_add('添加机构', '/index.php/Admin/Setup/addCooperation', '780', '450')"><i class="Hui-iconfont">
-        &#xe600;</i> 添加机构</a></span> <span class="r">共有数据：<strong><?php echo ($size); ?></strong> 条</span></div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l"><a class="btn btn-primary radius" data-title="添加分类" href="javascript:;"
+                                                               onclick="member_add('添加分类', '/index.php/Admin/Article/addCategory', '780', '400')"><i class="Hui-iconfont">
+        &#xe600;</i> 添加分类</a></span> <span class="r">共有数据：<strong><?php echo ($size); ?></strong> 条</span></div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-hover table-sort">
             <thead>
             <tr class="text-c">
                 <th width="50">序号</th>
-                <th width="100">预览</th>
-                <th width="100">预览</th>
-                <th width="50">链接</th>
+                <th width="100">分类</th>
                 <th width="60">发布状态</th>
                 <th width="120">操作</th>
             </tr>
             </thead>
             <?php if(is_array($arrData)): foreach($arrData as $k=>$vo): ?><tr class="text-c">
-                <td><?php echo ($vo["coid"]); ?></td>
-                <td>
-                    <img src="/Upload/<?php echo ($vo["logo"]); ?>">
-                </td>
-                <td><?php echo ($vo["name"]); ?></td>
-                <td><a href="<?php echo ($vo["link"]); ?>" target="_blank">链接</a></td>
+                <td><?php echo ($vo["acid"]); ?></td>
+                <td><?php echo ($vo["category"]); ?></td>
                 <td class="td-status">
                     <?php if($vo["status"] == 1): ?><span class="label label-success radius">已发布</span>
                     <?php else: ?>
@@ -61,25 +55,17 @@
                 <td class="f-14 td-manage">
 
                     <?php if($vo["status"] == 1): ?><a style="text-decoration:none"
-                       onClick="member_stop(this,'<?php echo ($vo["coid"]); ?>','0')" href="javascript:;"title="下架">
+                       onClick="member_stop(this,'<?php echo ($vo["acid"]); ?>','0')" href="javascript:;"title="下架">
                         <i class="Hui-iconfont">&#xe6de;</i>
                     </a><?php else: ?>
                     <a style="text-decoration:none"
-                       onClick="member_start(this,'<?php echo ($vo["coid"]); ?>','1')" href="javascript:;" title="发布">
+                       onClick="member_start(this,'<?php echo ($vo["acid"]); ?>','1')" href="javascript:;" title="发布">
                         <i class="Hui-iconfont">&#xe603;</i>
                     </a><?php endif; ?>
 
                     <a style="text-decoration:none" class="ml-5"
-                       onClick="member_del(this,'<?php echo ($vo["coid"]); ?>')" href="javascript:;" title="删除">
+                       onClick="member_del(this,'<?php echo ($vo["acid"]); ?>')" href="javascript:;" title="删除">
                         <i class="Hui-iconfont">&#xe6e2;</i>
-                    </a>
-                    <a style="text-decoration:none" class="ml-5"
-                       onClick="order(this,'MoveUp','<?php echo ($vo["coid"]); ?>')" href="javascript:;" title="上移">
-                        <i class="Hui-iconfont">&#xe679;</i>
-                    </a>
-                    <a style="text-decoration:none" class="ml-5"
-                       onClick="order(this,'MoveDown','<?php echo ($vo["coid"]); ?>')" href="javascript:;" title="下移">
-                        <i class="Hui-iconfont">&#xe674;</i>
                     </a>
                 </td>
             </tr><?php endforeach; endif; ?>
@@ -100,7 +86,7 @@
         "bStateSave": true,//状态保存
         "aoColumnDefs": [
             //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-            {"orderable": false, "aTargets": [4]}// 不参与排序的列
+            {"orderable": false, "aTargets": [3]}// 不参与排序的列
         ]
     });
 
@@ -120,7 +106,7 @@
     /*成员-删除*/
     function member_del(obj, id) {
         layer.confirm('确认要删除吗？', function (index) {
-            $.post('/index.php/Admin/Api/delete?datasheet=cooperation&column=coid&id='+id, function (ret) {
+            $.post('/index.php/Admin/Api/delete?datasheet=article_category&column=acid&id='+id, function (ret) {
                 if (ret == 'true') {
                     $(obj).parents("tr").remove();
                     layer.msg('已删除!', {icon: 1, time: 1000});
@@ -134,7 +120,7 @@
     function member_stop(obj, id ,status) {
         layer.confirm('确认要下架吗？', function (index) {
 
-            $.post('/index.php/Admin/Api/startOrStop?datasheet=cooperation&column=coid&id='+id+'&status='+status , function (ret) {
+            $.post('/index.php/Admin/Api/startOrStop?datasheet=article_category&column=acid&id='+id+'&status='+status , function (ret) {
                 if (ret == 'true') {
                     $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_start(this,'+id+',1)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
                     $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
@@ -151,7 +137,7 @@
     function member_start(obj, id,status) {
         layer.confirm('确认要发布吗？', function (index) {
 
-            $.post('/index.php/Admin/Api/startOrStop?datasheet=cooperation&column=coid&id='+id+'&status='+status, function (ret) {
+            $.post('/index.php/Admin/Api/startOrStop?datasheet=article_category&column=acid&id='+id+'&status='+status, function (ret) {
                 if (ret == 'true') {
                     $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_stop(this,'+id+',0)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
                     $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
@@ -175,7 +161,7 @@
                 return;
             }{
                 var previd=$(data_tr).prev().children('td').eq(0).html();
-                $.post('/index.php/Admin/Api/orderMember?datasheet=cooperation&column=coid&id='+id+'&pnid='+previd, function (ret) {
+                $.post('/index.php/Admin/Api/orderMember?datasheet=banner&column=baid&id='+id+'&pnid='+previd, function (ret) {
                     if (ret == 'true') {
                         $(data_tr).insertBefore($(data_tr).prev()); //将本身插入到目标tr的前面
                     }else{
@@ -190,7 +176,7 @@
                 return;
             }{
                 var nextid=$(data_tr).next().children('td').eq(0).html();
-                $.post('/index.php/Admin/Api/orderMember?datasheet=cooperation&column=coid&id='+id+'&pnid='+nextid, function (ret) {
+                $.post('/index.php/Admin/Api/orderMember?datasheet=banner&column=baid&id='+id+'&pnid='+nextid, function (ret) {
                     if (ret == 'true') {
                         $(data_tr).insertAfter($(data_tr).next()); //将本身插入到目标tr的后面
                     }else{
