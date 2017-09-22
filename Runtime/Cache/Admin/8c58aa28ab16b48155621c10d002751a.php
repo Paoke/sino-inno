@@ -33,7 +33,7 @@
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>标题：</label>
                     <div class="formControls col-xs-8 col-sm-5">
-                        <input type="text" class="input-text" value="" placeholder="请输入标题" id="title" name="title">
+                        <input type="text" class="input-text" value="<?php echo ($arrData['title']); ?>" placeholder="请输入标题" id="title" name="title">
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>摘要：</label>
                     <div class="formControls col-xs-8 col-sm-5">
                         <textarea name="summary" id="summary" cols="" rows="" class="textarea" placeholder="少于100个字"
-                                  onKeyUp="textarealength(this, 100)"></textarea>
+                                  onKeyUp="textarealength(this, 100)"><?php echo ($arrData['summary']); ?></textarea>
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@
                     <div class="formControls col-xs-8 col-sm-2">
                         <input type="text"
                                onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"
-                               id="start_time" name="start_time" class="input-text Wdate">
+                               id="start_time" name="start_time" class="input-text Wdate" value="<?php echo ($arrData['start_time']); ?>">
                     </div>
                 </div>
 
@@ -59,28 +59,28 @@
                     <div class="formControls col-xs-8 col-sm-2">
                         <input type="text"
                                onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"
-                               id="end_time" name="end_time" class="input-text Wdate">
+                               id="end_time" name="end_time" class="input-text Wdate" value="<?php echo ($arrData['end_time']); ?>">
                     </div>
                 </div>
 
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>费用：</label>
                     <div class="formControls col-xs-8 col-sm-5">
-                        <input type="text" class="input-text" value="" placeholder="请输入费用" id="expense" name="expense">
+                        <input type="text" class="input-text" value="<?php echo ($arrData['expense']); ?>" placeholder="请输入费用" id="expense" name="expense">
                     </div>
                 </div>
 
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>地址：</label>
                     <div class="formControls col-xs-8 col-sm-5">
-                        <input type="text" class="input-text" value="" placeholder="请输入地址" id="address" name="address">
+                        <input type="text" class="input-text" value="<?php echo ($arrData['address']); ?>" placeholder="请输入地址" id="address" name="address">
                     </div>
                 </div>
 
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>报名链接：</label>
                     <div class="formControls col-xs-8 col-sm-5">
-                        <input type="text" class="input-text" value="" placeholder="请输入报名链接" id="link" name="link">
+                        <input type="text" class="input-text" value="<?php echo ($arrData['link']); ?>" placeholder="请输入报名链接" id="link" name="link">
                     </div>
                 </div>
 
@@ -144,14 +144,14 @@
                             data[this.name] = this.value;
                         });
 
-                        $.post('/index.php/Admin/Activity/addActivity', data, function (ret) {
+                        $.post('/index.php/Admin/Activity/editActivity?acid=<?php echo ($arrData["acid"]); ?>', data, function (ret) {
                             if (ret == 'true') {
-                                layer.msg('添加成功!', {icon: 1, time: 1000},function(){
+                                layer.msg('修改成功!', {icon: 1, time: 1000},function(){
                                     var index = parent.layer.getFrameIndex(window.name);
                                     parent.layer.close(index);
                                 });
                             } else {
-                                layer.msg('添加失败!', {icon: 1, time: 1000});
+                                layer.msg('修改失败!', {icon: 1, time: 1000});
                             }
 
                         }, 'text');

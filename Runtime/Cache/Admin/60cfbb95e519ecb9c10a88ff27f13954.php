@@ -97,40 +97,17 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-comments">
-            <dt><i class="Hui-iconfont">&#xe70d;</i> 师资队伍<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a _href="/index.php/Admin/Teacher/memberList" data-title="成员列表" href="javascript:void(0);">成员列表</a></li>
-                </ul>
-            </dd>
-        </dl>
-        <dl id="menu-member">
-            <dt><i class="Hui-iconfont">&#xe60d;</i> 优秀学员<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a _href="/index.php/Admin/Student/memberList" data-title="嘉宾列表" href="javascript:void(0);">成员列表</a></li>
 
-                </ul>
-            </dd>
-        </dl>
-        <dl id="menu-member">
-            <dt><i class="Hui-iconfont">&#xe60d;</i> 报名管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a _href="/index.php/Admin/Enroll/enrollList" data-title="报名列表" href="javascript:void(0);">报名列表</a></li>
-                </ul>
-            </dd>
-
-        </dl>
         <dl id="menu-tongji">
             <dt><i class="Hui-iconfont">&#xe61a;</i> 关于我们<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="/index.php/Admin/About/editContent?abid=1" data-title="编辑内容" href="javascript:void(0)">学院简介</a></li>
-                    <li><a _href="/index.php/Admin/About/editContent?abid=2" data-title="预览页面" href="javascript:void(0)">院长致辞</a></li>
-                    <li><a _href="/index.php/Admin/About/editContent?abid=3" data-title="编辑内容" href="javascript:void(0)">学院委员会</a></li>
-                    <li><a _href="/index.php/Admin/About/editContent?abid=4" data-title="预览页面" href="javascript:void(0)">申请入读</a></li>
+                    <li><a data-title="研究院简介" href="javascript:void(0)" onclick="edit_word('研究院简介', '/index.php/Admin/About/edit?id=5', '1200', '900')">研究院简介</a></li>
+                    <li><a data-title="组织架构" href="javascript:void(0)" onclick="edit_word('组织架构', '/index.php/Admin/About/edit?id=6', '1200', '900')">组织架构</a></li>
+                    <li><a data-title="法律声明" href="javascript:void(0)" onclick="edit_word('法律声明', '/index.php/Admin/About/edit?id=7', '1200', '900')">法律声明</a></li>
+                    <li><a _href="/index.php/Admin/About/teamList?category=1" data-title="团队成员" href="javascript:void(0)">团队成员</a></li>
+                    <li><a _href="/index.php/Admin/About/teamList?category=2" data-title="顾问团队成员" href="javascript:void(0)">顾问团队成员</a></li>
+                    <li><a _href="/index.php/Admin/About/teamList?category=2" data-title="发展概况" href="javascript:void(0)">发展概况</a></li>
                 </ul>
             </dd>
         </dl>

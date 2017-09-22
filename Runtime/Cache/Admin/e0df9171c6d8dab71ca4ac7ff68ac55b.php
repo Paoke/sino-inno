@@ -51,11 +51,11 @@
             <?php if(is_array($arrData)): foreach($arrData as $k=>$vo): ?><tr class="text-c">
                 <td><?php echo ($vo["acid"]); ?></td>
                 <td><?php echo ($vo["title"]); ?></td>
-                <td><?php echo ($vo["start_time"]); ?>-<?php echo ($vo["end_time"]); ?></td>
+                <td><?php echo ($vo["start_time"]); ?> - <?php echo ($vo["end_time"]); ?></td>
                 <td><?php echo ($vo["address"]); ?></td>
                 <td><?php echo ($vo["expense"]); ?></td>
                 <td>
-                    <a href="<?php echo ($vo["link"]); ?>">报名链接</a>
+                    <a href="<?php echo ($vo["link"]); ?>" target="_blank">报名链接</a>
                 </td>
                 <td class="td-status">
                     <?php if($vo["status"] == 1): ?><span class="label label-success radius">已发布</span>
@@ -64,28 +64,20 @@
                 </td>
                 <td class="f-14 td-manage">
                     <?php if($vo["status"] == 1): ?><a style="text-decoration:none"
-                           onClick="article_stop(this,'<?php echo ($vo["arid"]); ?>','0')" href="javascript:;"title="下架">
+                           onClick="article_stop(this,'<?php echo ($vo["acid"]); ?>','0')" href="javascript:;"title="下架">
                             <i class="Hui-iconfont">&#xe6de;</i>
                         </a><?php else: ?>
                         <a style="text-decoration:none"
-                           onClick="article_start(this,'<?php echo ($vo["arid"]); ?>','1')" href="javascript:;" title="发布">
+                           onClick="article_start(this,'<?php echo ($vo["acid"]); ?>','1')" href="javascript:;" title="发布">
                             <i class="Hui-iconfont">&#xe603;</i>
                         </a><?php endif; ?>
-                    <a style="text-decoration:none" class="ml-5"
-                       onClick="order(this,'MoveUp','<?php echo ($vo["arid"]); ?>')" href="javascript:;" title="上移">
-                        <i class="Hui-iconfont">&#xe679;</i>
-                    </a>
-                    <a style="text-decoration:none" class="ml-5"
-                       onClick="order(this,'MoveDown','<?php echo ($vo["arid"]); ?>')" href="javascript:;" title="下移">
-                        <i class="Hui-iconfont">&#xe674;</i>
-                    </a>
 
                     <a style="text-decoration:none" class="ml-5" 
-                       onClick="article_edit('文章编辑','/index.php/Admin/Activity/editArticle?vied=<?php echo ($vo["arid"]); ?>','<?php echo ($vo["arid"]); ?>')"  href="javascript:;" title="编辑">
+                       onClick="article_edit('文章编辑','/index.php/Admin/Activity/editActivity?acid=<?php echo ($vo["acid"]); ?>','<?php echo ($vo["acid"]); ?>')"  href="javascript:;" title="编辑">
                         <i class="Hui-iconfont">&#xe6df;</i>
                     </a> 
                     <a style="text-decoration:none" class="ml-5"
-                       onClick="article_del(this,'<?php echo ($vo["arid"]); ?>')" href="javascript:;" title="删除">
+                       onClick="article_del(this,'<?php echo ($vo["acid"]); ?>')" href="javascript:;" title="删除">
                         <i class="Hui-iconfont">&#xe6e2;</i>
                     </a>
                 </td>
@@ -132,7 +124,7 @@
     /*文章-删除*/
     function article_del(obj, id) {
         layer.confirm('确认要删除吗？', function (index) {
-            $.post('/index.php/Admin/Api/delete?datasheet=article&column=arid&id='+id, function (ret) {
+            $.post('/index.php/Admin/Api/delete?datasheet=activity&column=acid&id='+id, function (ret) {
                 if (ret == 'true') {
                     $(obj).parents("tr").remove();
                     layer.msg('已删除!', {icon: 1, time: 1000});
@@ -155,7 +147,7 @@
     function article_stop(obj, id ,status) {
         layer.confirm('确认要下架吗？', function (index) {
 
-            $.post('/index.php/Admin/Api/startOrStop?datasheet=article&column=arid&id='+id+'&status='+status , function (ret) {
+            $.post('/index.php/Admin/Api/startOrStop?datasheet=activity&column=acid&id='+id+'&status='+status , function (ret) {
                 if (ret == 'true') {
                     $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_start(this,'+id+',1)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
                     $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
@@ -173,7 +165,7 @@
     function article_start(obj, id,status) {
         layer.confirm('确认要发布吗？', function (index) {
 
-            $.post('/index.php/Admin/Api/startOrStop?datasheet=article&column=arid&id='+id+'&status='+status, function (ret) {
+            $.post('/index.php/Admin/Api/startOrStop?datasheet=activity&column=acid&id='+id+'&status='+status, function (ret) {
                 if (ret == 'true') {
                     $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_stop(this,'+id+',0)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
                     $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');

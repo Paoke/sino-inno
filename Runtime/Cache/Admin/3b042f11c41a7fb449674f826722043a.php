@@ -29,42 +29,53 @@
     </head>
     <body>
         <article class="page-container">
-            <form action="" method="post" class="form form-horizontal" id="form-cooperation-add">
+            <form action="" method="post" class="form form-horizontal" id="form-member-add">
 
                 <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>名称：</label>
-                    <div class="formControls col-xs-8 col-sm-9">
-                        <input type="text" class="input-text" placeholder="请输入名称" id="name" name="name">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>姓名：</label>
+                    <div class="formControls col-xs-8 col-sm-5">
+                        <input type="text" class="input-text" placeholder="请输入名称" id="name" name="name" value="<?php echo ($arrData['name']); ?>">
                     </div>
                 </div>
 
                 <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>名称：</label>
-                    <div class="formControls col-xs-8 col-sm-9">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>职位：</label>
+                    <div class="formControls col-xs-8 col-sm-5">
+                        <input type="text" class="input-text" placeholder="请输入名称" id="job" name="job" value="<?php echo ($arrData['job']); ?>">
+                    </div>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>简介：</label>
+                    <div class="formControls col-xs-8 col-sm-5">
+                        <textarea name="summary" id="summary" cols="" rows="" class="textarea" placeholder="少于100个字"
+                                  onKeyUp="textarealength(this, 100)"><?php echo ($arrData['name']); ?></textarea>
+                    </div>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类：</label>
+                    <div class="formControls col-xs-8 col-sm-5">
                         <span class="select-box">
                             <select class="select" size="1" id="category" name="category">
-                                <option value="0" selected>请选择</option>
-                                <option value="1">合作企业</option>
-                                <option value="2">金融机构</option>
-                                <option value="3">合作高校</option>
+                                <option value="0">请选择</option>
+                                <?php if($arrData['category'] == 1): ?><option value="1" selected>团队成员</option>
+                                    <?php else: ?>
+                                    <option value="1">团队成员</option><?php endif; ?>
+                                <?php if($arrData['category'] == 2): ?><option value="2" selected>顾问团队成员</option>
+                                    <?php else: ?>
+                                    <option value="2">顾问团队成员</option><?php endif; ?>
                             </select>
                         </span>
                     </div>
                 </div>
 
+                <input type="hidden" id="img_position" name="img_position" value="<?php echo ($arrData['header']); ?>">
                 <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>链接：</label>
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">* </span>头像：</label>
                     <div class="formControls col-xs-8 col-sm-9">
-                        <input type="text" class="input-text" placeholder="请输入链接" id="link" name="link">
-                    </div>
-                </div>
-
-                <input type="hidden" id="img_position" name="img_position">
-                <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">* </span>logo：</label>
-                    <div class="formControls col-xs-8 col-sm-9">
-                        <input type="file" class="img" name="img" onchange="upload('img')"><span class="c-red" id="img_success">(图片规格：240*100)</span>
-                        <br/><br/><img src="" id="img_see" width="240" height="100">
+                        <input type="file" class="img" name="img" onchange="upload('img')"><span class="c-red" id="img_success"></span>
+                        <br/><br/><img src="/upload/<?php echo ($arrData['header']); ?>" id="img_see" width="240" height="100">
                     </div>
                 </div>
 
@@ -93,7 +104,7 @@
         <script>
             $('#btn_submit').on('click', function () {
                 var data = {};
-                var t = $('#form-cooperation-add').serializeArray();
+                var t = $('#form-member-add').serializeArray();
                 $.each(t, function() {
                     data[this.name] = this.value;
                 });
@@ -102,7 +113,7 @@
                     return false;
                 }
 
-                $.post('/index.php/Admin/Setup/add?action=cooperation', data, function (ret) {
+                $.post('/index.php/Admin/About/editMember?teid=<?php echo ($arrData["teid"]); ?>', data, function (ret) {
                     if (ret == 'true') {
                         layer.msg('上传成功!', {icon: 1, time: 1000},function(){
                             var index = parent.layer.getFrameIndex(window.name);

@@ -40,8 +40,8 @@
             <tr class="text-c">
                 <th width="50">序号</th>
                 <th width="100">预览</th>
-                <th width="100">预览</th>
-                <th width="50">链接</th>
+                <th width="100">名称</th>
+                <th width="50">分类</th>
                 <th width="60">发布状态</th>
                 <th width="120">操作</th>
             </tr>
@@ -52,7 +52,11 @@
                     <img src="/Upload/<?php echo ($vo["logo"]); ?>">
                 </td>
                 <td><?php echo ($vo["name"]); ?></td>
-                <td><a href="<?php echo ($vo["link"]); ?>" target="_blank">链接</a></td>
+                <td>
+                    <?php if($vo["category"] == 1): ?>合作企业
+                        <?php elseif($vo["category"] == 2): ?>金融机构
+                        <?php else: ?>合作高校<?php endif; ?>
+                </td>
                 <td class="td-status">
                     <?php if($vo["status"] == 1): ?><span class="label label-success radius">已发布</span>
                     <?php else: ?>
@@ -73,14 +77,7 @@
                        onClick="member_del(this,'<?php echo ($vo["coid"]); ?>')" href="javascript:;" title="删除">
                         <i class="Hui-iconfont">&#xe6e2;</i>
                     </a>
-                    <a style="text-decoration:none" class="ml-5"
-                       onClick="order(this,'MoveUp','<?php echo ($vo["coid"]); ?>')" href="javascript:;" title="上移">
-                        <i class="Hui-iconfont">&#xe679;</i>
-                    </a>
-                    <a style="text-decoration:none" class="ml-5"
-                       onClick="order(this,'MoveDown','<?php echo ($vo["coid"]); ?>')" href="javascript:;" title="下移">
-                        <i class="Hui-iconfont">&#xe674;</i>
-                    </a>
+
                 </td>
             </tr><?php endforeach; endif; ?>
             </tbody>

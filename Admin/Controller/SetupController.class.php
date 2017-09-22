@@ -17,16 +17,18 @@ class SetupController extends CommonControllers
 
     public function add($action)
     {
-        $intMax = D("$action")->max('orderid');
+
         if ($action == 'banner') {
+            $intMax = D("$action")->max('orderid');
             $_POST['img'] = $_POST['img_position'];
             $_POST['time'] = date('Y-m-d');
+            $_POST['orderid'] = $intMax + 1;
         } else {
             $_POST['name'] = $_POST['name'];
             $_POST['logo'] = $_POST['img_position'];
             $_POST['link'] = $_POST['link'];
         }
-        $_POST['orderid'] = $intMax + 1;
+
         $_POST['status'] = '1';
 
         $intNum = D("$action")->add($_POST);
@@ -48,7 +50,7 @@ class SetupController extends CommonControllers
         if (IS_POST) {
             $data = I('post.');
             foreach ($data as $key => $value) {
-                D('config')->where(array('name' => $key))->data(array('value' => $value))->save();
+                D('config')->where(array('key' => $key))->data(array('value' => $value))->save();
             }
             echo 'true';
         } else {
@@ -60,7 +62,7 @@ class SetupController extends CommonControllers
 
     public function cooperationList()
     {
-        $arrData = D('cooperation')->order('orderid asc')->select();
+        $arrData = D('cooperation')->select();
         $this->assign('arrData', $arrData);
         $this->assign('size', sizeof($arrData));
         $this->display();
