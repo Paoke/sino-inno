@@ -107,7 +107,7 @@
                     <li><a data-title="法律声明" href="javascript:void(0)" onclick="edit_word('法律声明', '/index.php/Admin/About/edit?id=7', '1200', '900')">法律声明</a></li>
                     <li><a _href="/index.php/Admin/About/teamList?category=1" data-title="团队成员" href="javascript:void(0)">团队成员</a></li>
                     <li><a _href="/index.php/Admin/About/teamList?category=2" data-title="顾问团队成员" href="javascript:void(0)">顾问团队成员</a></li>
-                    <li><a _href="/index.php/Admin/About/teamList?category=2" data-title="发展概况" href="javascript:void(0)">发展概况</a></li>
+                    <li><a _href="/index.php/Admin/About/summaryList" data-title="发展概况" href="javascript:void(0)">发展概况</a></li>
                 </ul>
             </dd>
         </dl>

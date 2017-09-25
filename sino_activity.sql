@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2017-09-22 18:58:19
+Date: 2017-09-25 17:29:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -59,7 +59,7 @@ CREATE TABLE `sino_admin` (
 -- ----------------------------
 -- Records of sino_admin
 -- ----------------------------
-INSERT INTO `sino_admin` VALUES ('1', 'admin', 'webadmin', '15', '2017-09-22 17:52:21', '127.0.0.1', '18819201898', '462369233@qq.com', '2017-05-11 15:20:06', '后台管理员');
+INSERT INTO `sino_admin` VALUES ('1', 'admin', 'webadmin', '17', '2017-09-25 14:13:05', '127.0.0.1', '18819201898', '462369233@qq.com', '2017-05-11 15:20:06', '后台管理员');
 
 -- ----------------------------
 -- Table structure for `sino_article`
@@ -135,19 +135,24 @@ CREATE TABLE `sino_config` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(16) DEFAULT NULL,
   `value` longtext,
+  `time` varchar(16) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sino_config
 -- ----------------------------
-INSERT INTO `sino_config` VALUES ('1', 'record_no', '粤ICP备14039480号');
-INSERT INTO `sino_config` VALUES ('2', 'copyright', 'Copyright © 2014-2017 中创研究院 版权所有');
-INSERT INTO `sino_config` VALUES ('3', 'support', '技术支持：广东庖丁技术开发股份有限公司');
-INSERT INTO `sino_config` VALUES ('4', 'address', '广州市海珠区滨江东路548-1号中大创新谷');
-INSERT INTO `sino_config` VALUES ('5', 'about', '<p>研究院简介设置---按时是地地道道</p>');
-INSERT INTO `sino_config` VALUES ('6', 'organization', '<p>组织架构 &nbsp;&nbsp;</p>');
-INSERT INTO `sino_config` VALUES ('7', 'declaration', '<p>法律声明 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>');
+INSERT INTO `sino_config` VALUES ('1', 'record_no', '粤ICP备14039480号', null);
+INSERT INTO `sino_config` VALUES ('2', 'copyright', 'Copyright © 2014-2017 中创研究院 版权所有', null);
+INSERT INTO `sino_config` VALUES ('3', 'support', '技术支持：广东庖丁技术开发股份有限公司', null);
+INSERT INTO `sino_config` VALUES ('4', 'address', '广州市海珠区滨江东路548-1号中大创新谷', null);
+INSERT INTO `sino_config` VALUES ('5', 'about', '<p>研究院简介设置---按时是地地道道</p>', null);
+INSERT INTO `sino_config` VALUES ('6', 'organization', '<p>组织架构 &nbsp;&nbsp;</p>', null);
+INSERT INTO `sino_config` VALUES ('7', 'declaration', '<p>法律声明 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>', null);
+INSERT INTO `sino_config` VALUES ('9', 'summary', '<p>是的发生的 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>', '2014');
+INSERT INTO `sino_config` VALUES ('10', 'summary', '<p>按时大法师法大大</p>', '2015');
+INSERT INTO `sino_config` VALUES ('11', 'summary', '<p>大师法索多敷阿斯顿发生</p>', '2016');
+INSERT INTO `sino_config` VALUES ('12', 'summary', '<p>阿斯顿发生大发</p>', '2017');
 
 -- ----------------------------
 -- Table structure for `sino_cooperation`

@@ -64,4 +64,45 @@ class AboutController extends CommonControllers
             $this->display();
         }
     }
+
+    public function summaryList(){
+        $key='summary';
+        $arrData=D('config')->where(array('key' => $key))->select();
+        $this->assign('arrData',$arrData);
+        $this->assign('size', sizeof($arrData));
+        $this->display();
+    }
+
+    public function addSummary(){
+        if(IS_POST){
+            $_POST['value']=$_POST['content'];
+            $_POST['key']='summary';
+            $intNum = D("config")->add($_POST);
+
+            if ($intNum) {
+                echo 'true';
+            } else {
+                echo 'false';
+            }
+        }else{
+            $this->display();
+        }
+    }
+
+    public function editSummary($id){
+        if(IS_POST){
+            $_POST['value']=$_POST['content'];
+            $_POST['key']='summary';
+            $intNum=D('config')->where("id=$id")->save($_POST);
+            if ($intNum) {
+                echo 'true';
+            } else {
+                echo 'false';
+            }
+        }else{
+            $arrData=D('config')->where('id='.$id)->find();
+            $this->assign('arrData',$arrData);
+            $this->display();
+        }
+    }
 }
