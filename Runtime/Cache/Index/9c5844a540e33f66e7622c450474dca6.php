@@ -78,7 +78,7 @@
 	<!--  news begin-->
 		<p class="in_news_title">最新资讯</p>
 		<div class="in_news clear">
-			<?php $__FOR_START_6945__=0;$__FOR_END_6945__=3;for($i=$__FOR_START_6945__;$i < $__FOR_END_6945__;$i+=1){ ?><div class="in_news_section fl" style="background:url(<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["indeximg"]); ?>)";>
+			<?php $__FOR_START_30163__=0;$__FOR_END_30163__=3;for($i=$__FOR_START_30163__;$i < $__FOR_END_30163__;$i+=1){ ?><div class="in_news_section fl" style="background:url(<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["indeximg"]); ?>)";>
 					<div class="in_news_mask"></div>
 					<p class="in_sec_tit">
 						<?php echo ($arrArticle[$i]["title"]); ?>
@@ -98,7 +98,7 @@
 		</div>
 
 		<div class="in_art_content ">
-			<?php $__FOR_START_19270__=3;$__FOR_END_19270__=5;for($i=$__FOR_START_19270__;$i < $__FOR_END_19270__;$i+=1){ ?><a href="">
+			<?php $__FOR_START_9488__=3;$__FOR_END_9488__=5;for($i=$__FOR_START_9488__;$i < $__FOR_END_9488__;$i+=1){ ?><a href="">
 					<div class="in_art_option clear">
 						<div class="in_ct_pho fl">
 							<img src="<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["thumbimg"]); ?>" alt="">
