@@ -1,0 +1,832 @@
+[ 2017-10-01T13:31:05+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0992s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0575s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0323s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023932s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024031s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000937s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001113s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001199s ]
+
+[ 2017-10-01T13:36:34+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002469s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0400s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0360s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000370s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000501s ]
+
+[ 2017-10-01T13:36:59+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000942s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001150s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0398s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0251s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000309s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000404s ]
+
+[ 2017-10-01T13:37:17+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0301s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0232s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000244s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000322s ]
+
+[ 2017-10-01T13:40:04+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0405s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0259s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000322s ]
+
+[ 2017-10-01T13:41:02+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0538s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0296s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000437s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000585s ]
+
+[ 2017-10-01T13:41:18+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000891s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0319s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0320s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000256s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
+
+[ 2017-10-01T13:42:01+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000912s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001261s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0448s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0275s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000412s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000533s ]
+
+[ 2017-10-01T13:42:21+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000090s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002609s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0466s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0298s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000362s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000504s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026396s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001323s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001457s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004871s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005016s ]
+
+[ 2017-10-01T13:42:32+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000996s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001691s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0477s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0413s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000260s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000341s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022666s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022821s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001399s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001489s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001647s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001774s ]
+
+[ 2017-10-01T13:43:17+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000979s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001061s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0905s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0200s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000234s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000321s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016952s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017064s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000776s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001088s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001183s ]
+
+[ 2017-10-01T13:43:24+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000871s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0330s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0197s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000296s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000397s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023181s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001482s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000970s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001046s ]
+
+[ 2017-10-01T13:43:45+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0351s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0256s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000246s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000324s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027786s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027926s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000757s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001446s ]
+
+[ 2017-10-01T13:46:40+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001888s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0442s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0350s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000262s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000344s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027203s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027383s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001582s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001732s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003815s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003948s ]
+
+[ 2017-10-01T13:47:03+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0201s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0176s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000171s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000230s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014929s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000977s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001080s ]
+
+[ 2017-10-01T13:47:34+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000971s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.3098s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0253s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000249s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000328s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023437s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023659s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001593s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001767s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002658s ]
+
+[ 2017-10-01T13:48:45+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001133s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001209s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0376s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0185s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000190s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013026s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000957s ]
+
+[ 2017-10-01T13:49:09+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001143s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001511s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0359s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0284s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000354s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000456s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027892s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000918s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004167s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006223s ]
+
+[ 2017-10-01T13:49:19+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000760s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0365s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0228s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000224s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017278s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017382s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000677s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001047s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001152s ]
+
+[ 2017-10-01T13:50:00+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001811s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0422s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0264s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0039s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000388s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000502s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035772s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035918s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001390s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001492s ]
+
+[ 2017-10-01T13:50:32+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001441s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0437s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0404s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000247s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000323s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025086s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025213s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000940s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001440s ]
+
+[ 2017-10-01T13:50:53+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001424s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0287s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0211s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000281s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020522s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020609s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001344s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001481s ]
+
+[ 2017-10-01T13:51:46+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000811s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0232s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0244s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021105s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021194s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001688s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001819s ]
+
+[ 2017-10-01T13:52:00+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000945s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001140s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001237s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0264s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0255s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000190s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018930s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019027s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001075s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001155s ]
+
+[ 2017-10-01T13:52:29+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000985s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001334s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0287s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0200s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015280s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015380s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001204s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001304s ]
+
+[ 2017-10-01T13:58:54+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002023s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001595s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0281s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0359s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000185s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019228s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019349s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001262s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001340s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001429s ]
+
+[ 2017-10-01T13:59:05+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0278s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0230s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 9   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000292s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000387s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023760s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023912s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001164s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001298s ]
+
+[ 2017-10-01T14:04:46+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0225s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0159s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016452s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016527s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000974s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001171s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001271s ]
+
+[ 2017-10-01T14:05:32+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000963s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0357s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0209s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 5   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000328s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029121s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001016s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001112s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002741s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002915s ]
+
+[ 2017-10-01T14:06:17+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000986s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0222s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0295s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 5   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000310s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021432s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021561s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000627s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000712s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001135s ]
+
+[ 2017-10-01T14:07:14+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0184s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0401s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 5   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000320s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029294s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029424s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001387s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001494s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001674s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001805s ]
+
+[ 2017-10-01T14:07:50+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0359s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0231s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 5   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000228s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000310s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020047s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020143s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000627s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001258s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001410s ]
+
+[ 2017-10-01T14:08:25+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001212s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001148s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001249s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0490s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0227s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 5   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000344s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026689s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026826s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000787s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000861s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001693s ]
+
+[ 2017-10-01T14:09:09+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0310s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0305s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 5   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000267s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000354s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026280s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026419s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000982s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001059s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001916s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002039s ]
+
+[ 2017-10-01T14:09:36+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000844s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0199s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0287s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 5   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000277s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000371s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018114s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018198s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001791s ]
+
+[ 2017-10-01T14:10:00+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000904s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001191s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001282s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0302s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0151s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014605s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014681s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001108s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001201s ]
+
+[ 2017-10-01T14:10:38+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001060s ]
+SQL: SHOW COLUMNS FROM `sino_banner` [ RunTime:0.0231s ]
+SQL: SELECT * FROM `sino_banner` WHERE ( status=1 ) ORDER BY orderid asc  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `sino_article` [ RunTime:0.0243s ]
+SQL: SELECT `arid`,`title`,`summary`,`acid`,`read_times`,`indeximg`,`thumbimg`,`from`,`time` FROM `sino_article` WHERE ( status=1 ) ORDER BY arid desc LIMIT 5   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000384s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000506s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024724s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024826s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001215s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001323s ]
+

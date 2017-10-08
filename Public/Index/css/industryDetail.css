@@ -1,0 +1,139 @@
+/*
+* @description: 中创产业研究院产业方向详情页、行业资讯详情页  tradeDetail.html   industryDetail.html
+* @author: huangxiang
+* @update: name (2017-09-21 11:30)
+*/
+/*share*/
+
+.bdsharebuttonbox .bds_weixin {
+	 width: 22px;
+	 height:22px; 
+	 background: url(../images/cyfx-icon-weixin.png) no-repeat;
+	 background-position: 0 0 !important;
+	}
+.bdsharebuttonbox .qqzone {width: 22px; height:22px; background: url(../images/cyfx-icon-qq.png) no-repeat }
+.bdsharebuttonbox .sina {width: 22px; height:22px; background: url(../images/cyfx-icon-weibo.png) no-repeat }
+
+
+
+.inDet_main{
+	width: 1200px;
+	margin: 30px auto 40px;}
+.inDet_main_left{
+	width: 800px;
+	background: #fff;
+	padding: 46px 34px 40px;
+}
+.inDet_main_left_head{
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #bbb;
+}
+.inDet_main_right{
+	width: 360px;
+	background: #e9e9e9;
+}
+.book_icon{
+	margin-top: 7px;
+}
+.inDet_left_title{
+	width: 628px;
+	font-size: 24px;
+	color: #1e1e1e;
+	margin-left: 10px;
+	display:block;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.head_shareDiv{
+	margin-top: 22px;
+	color: #999;
+	font-size: 14px;
+}
+.mar_left{
+	margin-left: 16px;
+}
+.inDet_main_left_ct{
+	padding-top: 30px;
+	color: #999;
+	font-size: 14px;
+	text-indent:2em;
+	
+}
+.inDet_main_left_ct p{
+	text-indent:2em;
+	margin-bottom: 30px;
+}
+.inDet_main_left_ct img{
+	width: 620px;
+	height: 380px;
+	margin: 0 auto 30px;
+	display: block;
+}
+
+/*main right  */
+.in_art_option_r{
+	padding: 16px 0 0 16px;
+	width: 360px;
+	background: #fff;	
+	margin-bottom: 30px;
+}
+.main_tab{
+	padding-bottom: 20px;
+}
+.main_tab .ind_active{
+	background: #ce1d19;
+	color: #fff;
+}
+.option_r_tt{
+	margin: 0 0 14px;
+	font-size: 18px;
+	color: #999;
+}
+.ind_ct_main_r{
+	width: 215px;
+	display:block;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.option_r_ct{
+	width: 328px;
+	padding-bottom: 16px;
+	margin-bottom: 14px;
+	border-bottom: 1px dashed #eee;
+}
+.ind_ct_pho_r{
+	width: 100px;
+	height: 76px;
+}
+.ind_ct_pho_r img{
+	width: 100%;
+}
+.ind_main_tit_r{
+	color: #1e1e1e;
+	font-size: 16px;
+}
+.ind_main_time_r{
+	color: #999;
+	font-size: 12px;
+	margin-top: 20px;
+}
+.ind_main_read_r{
+	color: #999;
+	font-size: 12px;
+	margin-top: 4px;
+}
+.main_tab a{
+	display: inline-block;
+	background: #eee;
+	font-size: 16px;
+	text-align: center;
+	height: 36px;
+	line-height: 36px;
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 0 12px;
+	margin-top: 6px;
+	color: #666;
+}

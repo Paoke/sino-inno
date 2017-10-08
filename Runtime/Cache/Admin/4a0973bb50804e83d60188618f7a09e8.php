@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="{$Think.ADMIN_LIB_JS_URL}html5.js"></script>
-    <script type="text/javascript" src="{$Think.ADMIN_LIB_JS_URL}respond.min.js"></script>
-    <script type="text/javascript" src="{$Think.ADMIN_LIB_JS_URL}PIE_IE678.js"></script>
+    <script type="text/javascript" src="<?php echo (ADMIN_LIB_JS_URL); ?>html5.js"></script>
+    <script type="text/javascript" src="<?php echo (ADMIN_LIB_JS_URL); ?>respond.min.js"></script>
+    <script type="text/javascript" src="<?php echo (ADMIN_LIB_JS_URL); ?>PIE_IE678.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="{$Think.ADMIN_STATIC_HUI_CSS_URL}H-ui.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{$Think.ADMIN_STATIC_HUI_CSS_URL}H-ui.admin.css"/>
-    <link rel="stylesheet" type="text/css" href="{$Think.ADMIN_LIB_HUI_ICONFONT_CSS_URL}iconfont.css"/>
-    <link rel="stylesheet" type="text/css" href="{$Think.ADMIN_LIB_ICHECK_CSS_URL}icheck.css"/>
-    <link rel="stylesheet" type="text/css" href="{$Think.ADMIN_STATIC_HUI_SKIN_DEFAULT_CSS_URL}skin.css" id="skin"/>
-    <link rel="stylesheet" type="text/css" href="{$Think.ADMIN_STATIC_HUI_CSS_URL}style.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo (ADMIN_STATIC_HUI_CSS_URL); ?>H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo (ADMIN_STATIC_HUI_CSS_URL); ?>H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo (ADMIN_LIB_HUI_ICONFONT_CSS_URL); ?>iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo (ADMIN_LIB_ICHECK_CSS_URL); ?>icheck.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo (ADMIN_STATIC_HUI_SKIN_DEFAULT_CSS_URL); ?>skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo (ADMIN_STATIC_HUI_CSS_URL); ?>style.css"/>
     <!--[if IE 6]>
     <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
@@ -32,8 +32,8 @@
 <div class="page-container">
     
     <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l"><a class="btn btn-primary radius" data-title="添加文章" href="javascript:;"
-                                                          onclick="article_add('添加文章','__CONTROLLER__/addArticle')"><i class="Hui-iconfont">
-        &#xe600;</i> 添加文章</a></span> <span class="r">共有数据：<strong>{$size}</strong> 条</span></div>
+                                                          onclick="article_add('添加文章','/index.php/Admin/Article/addArticle')"><i class="Hui-iconfont">
+        &#xe600;</i> 添加文章</a></span> <span class="r">共有数据：<strong><?php echo ($size); ?></strong> 条</span></div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-hover table-sort">
             <thead>
@@ -48,69 +48,61 @@
                 <th width="120">操作</th>
             </tr>
             </thead>
-            <foreach name="arrData" item="vo" key="k">
-            <tr class="text-c">
-                <td>{$vo.arid}</td>
+            <?php if(is_array($arrData)): foreach($arrData as $k=>$vo): ?><tr class="text-c">
+                <td><?php echo ($vo["arid"]); ?></td>
                 <td>
                     <u style="cursor:pointer" class="text-primary"
-                                      onClick="article_see('查看文章详情','__CONTROLLER__/seeArticle?arid={$v1.arid}','10001')" title="查看文章详情">{$vo.title}</u>
+                                      onClick="article_see('查看文章详情','/index.php/Admin/Article/seeArticle?arid=<?php echo ($v1["arid"]); ?>','10001')" title="查看文章详情"><?php echo ($vo["title"]); ?></u>
                 </td>
-                <td>{$vo.from}</td>
-                <td>{$vo.read_times}</td>
-                <td>{$vo.time}</td>
+                <td><?php echo ($vo["from"]); ?></td>
+                <td><?php echo ($vo["read_times"]); ?></td>
+                <td><?php echo ($vo["time"]); ?></td>
                 <td>
-                    <foreach name="arrCategories" item="vo1" key="k1">
-                        <if condition="$vo['acid'] eq $vo1['acid']">{$vo1.category}</if>
-                    </foreach>
+                    <?php if(is_array($arrCategories)): foreach($arrCategories as $k1=>$vo1): if($vo['acid'] == $vo1['acid']): echo ($vo1["category"]); endif; endforeach; endif; ?>
                 </td>
                 <td class="td-status">
-                    <if condition="$vo.status eq 1">
-                    <span class="label label-success radius">已发布</span>
-                    <else />
-                    <span class="label label-defaunt radius">已下架</span>
-                    </if>
+                    <?php if($vo["status"] == 1): ?><span class="label label-success radius">已发布</span>
+                    <?php else: ?>
+                    <span class="label label-defaunt radius">已下架</span><?php endif; ?>
                 </td>
                 <td class="f-14 td-manage">
-                    <if condition="$vo.status eq 1">
-                        <a style="text-decoration:none"
-                           onClick="article_stop(this,'{$vo.arid}','0')" href="javascript:;"title="下架">
+                    <?php if($vo["status"] == 1): ?><a style="text-decoration:none"
+                           onClick="article_stop(this,'<?php echo ($vo["arid"]); ?>','0')" href="javascript:;"title="下架">
                             <i class="Hui-iconfont">&#xe6de;</i>
-                        </a><else />
+                        </a><?php else: ?>
                         <a style="text-decoration:none"
-                           onClick="article_start(this,'{$vo.arid}','1')" href="javascript:;" title="发布">
+                           onClick="article_start(this,'<?php echo ($vo["arid"]); ?>','1')" href="javascript:;" title="发布">
                             <i class="Hui-iconfont">&#xe603;</i>
-                        </a>
-                    </if>
+                        </a><?php endif; ?>
                     <!--<a style="text-decoration:none" class="ml-5"-->
-                       <!--onClick="order(this,'MoveUp','{$vo.arid}')" href="javascript:;" title="上移">-->
+                       <!--onClick="order(this,'MoveUp','<?php echo ($vo["arid"]); ?>')" href="javascript:;" title="上移">-->
                         <!--<i class="Hui-iconfont">&#xe679;</i>-->
                     <!--</a>-->
                     <!--<a style="text-decoration:none" class="ml-5"-->
-                       <!--onClick="order(this,'MoveDown','{$vo.arid}')" href="javascript:;" title="下移">-->
+                       <!--onClick="order(this,'MoveDown','<?php echo ($vo["arid"]); ?>')" href="javascript:;" title="下移">-->
                         <!--<i class="Hui-iconfont">&#xe674;</i>-->
                     <!--</a>-->
 
                     <a style="text-decoration:none" class="ml-5" 
-                       onClick="article_edit('文章编辑','__CONTROLLER__/editArticle?arid={$vo.arid}','{$vo.arid}')"  href="javascript:;" title="编辑">
+                       onClick="article_edit('文章编辑','/index.php/Admin/Article/editArticle?arid=<?php echo ($vo["arid"]); ?>','<?php echo ($vo["arid"]); ?>')"  href="javascript:;" title="编辑">
                         <i class="Hui-iconfont">&#xe6df;</i>
                     </a> 
                     <a style="text-decoration:none" class="ml-5"
-                       onClick="article_del(this,'{$vo.arid}')" href="javascript:;" title="删除">
+                       onClick="article_del(this,'<?php echo ($vo["arid"]); ?>')" href="javascript:;" title="删除">
                         <i class="Hui-iconfont">&#xe6e2;</i>
                     </a>
                 </td>
-            </tr>
-            </foreach>
+            </tr><?php endforeach; endif; ?>
             </tbody>
         </table>
     </div>
 </div>
-<script type="text/javascript" src="{$Think.ADMIN_LIB_JQUERY_JS_URL}jquery.min.js"></script>
-<script type="text/javascript" src="{$Think.ADMIN_LIB_LAYER_JS_URL}layer.js"></script>
-<script type="text/javascript" src="{$Think.ADMIN_LIB_MY97DATEPICKER_JS_URL}WdatePicker.js"></script>
-<script type="text/javascript" src="{$Think.ADMIN_LIB_DATATABLES_JS_URL}jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="{$Think.ADMIN_STATIC_HUI_JS_URL}H-ui.js"></script>
-<script type="text/javascript" src="{$Think.ADMIN_STATIC_HUI_JS_URL}H-ui.admin.js"></script>
+<script type="text/javascript" src="<?php echo (ADMIN_LIB_JQUERY_JS_URL); ?>jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo (ADMIN_LIB_LAYER_JS_URL); ?>layer.js"></script>
+<script type="text/javascript" src="<?php echo (ADMIN_LIB_MY97DATEPICKER_JS_URL); ?>WdatePicker.js"></script>
+<script type="text/javascript" src="<?php echo (ADMIN_LIB_DATATABLES_JS_URL); ?>jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?php echo (ADMIN_STATIC_HUI_JS_URL); ?>H-ui.js"></script>
+<script type="text/javascript" src="<?php echo (ADMIN_STATIC_HUI_JS_URL); ?>H-ui.admin.js"></script>
 <script type="text/javascript">
     $('.table-sort').dataTable({
         "aaSorting": [[0, "desc"]],//默认第几个排序

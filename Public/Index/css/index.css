@@ -1,0 +1,366 @@
+/*
+* @description: 中创产业研究院首页
+* @author: huangxiang
+* @update: name (2017-09-18 16:40)
+*/
+
+
+/*********** index Start ***************/
+/*    line 26——————line 390     */
+/* Header */
+.in_body{
+	width: 100%;
+	padding-top: 80px;
+}
+.in_head_wrap{
+	width: 100%;
+	height: 80px;
+	color: #fff;	
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+	background: #fff;
+}
+.in_search{
+	width: 1200px;	
+	height: 80px;
+	margin: 0 auto;
+	border-top:1px solid transparent;
+}
+
+.in_search_left{
+	margin: 20px 0 0 0px;
+	height: 80px;
+}
+.in_search_logo{
+	display: inline-block;
+	padding-right: 14px;
+	border-right:1px solid #ccc; 
+}
+.in_search_left_word{
+	border:1px solid transparent;
+	display: inline-block;
+	color: #1e1e1e;
+	font-size: 16px;
+	margin: 5px 0 0 14px;
+}
+.in_search_right{
+	margin: 28px 0 0 0;
+
+}
+.in_inputDiv{
+	width: 246px;
+	height: 26px;
+	display: inline-block;
+	margin-right: 34px;
+}
+.in_input{
+	width: 206px;
+	height: 26px;
+	border: 1px solid #e0e0e0;
+	padding-left: 4px;
+	color: #aaa;
+}
+.in_search_icon{
+	width: 40px;
+	height: 26px;
+	background:#e0e0e0;
+	border-radius: 2px;
+}
+.in_search_icon{
+	text-align: center;
+	padding-top: 5px;
+}
+.in_codeDiv{
+	display: inline-block;
+	width: 30px;
+	height: 24px;
+	background: url(../images/sy-weixin-ydj.png)no-repeat;	
+	position: relative;
+}
+.in_QRcode{
+	position: absolute;
+	right: 0;
+	top: 50px;
+	display: none;
+
+}
+.in_codeDiv:hover .in_QRcode{
+	display: block;
+}
+.in_banner{
+	width: 100%;
+	min-width: 1200px;
+}
+.in_banner img{
+	width: 100%;
+}
+.in_nav_a{
+	position: relative;
+}
+.in_nav_icon{
+	width: 28px;
+	height: 27px;
+	transition:all .2s;
+}
+.in_nav_a:hover .in_nav_icon{
+	transform:scale(1.35);
+	transition:all .2s;
+}
+
+.in_nav_wrap{
+	width: 100%;
+	height: 110px;
+	color: #fff;
+	background: #ce1d19;
+}
+.in_nav{
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 26px;	
+}
+.in_nav a{
+	margin-left: 160px;
+	text-align: center;
+}
+.in_nav_l{
+	margin-top: 8px;
+	color: #fff;
+}
+
+/*content*/
+.in_news_title{
+	display: block;
+	margin: 60px auto;
+	text-align: center;
+	font-size: 38px;
+	color: #1e1e1e;
+}
+.in_news{
+	width: 1200px;
+	margin: 0 auto;
+}
+.in_news_section{
+	width: 400px;
+	height: 500px;
+	padding: 38px 30px 0 30px;
+	background-size: 100% 100%;
+	position: relative;
+	overflow: hidden;
+	
+}
+.in_news_section:hover .in_news_mask{
+	background: rgba(0,0,0,0.7);
+	transition:all .5s;
+}
+.in_news_section:hover .know_more{
+	transition:all .5s;
+	transform: translateY(-260px);
+}
+.in_news_mask{
+	width: 400px;
+	height: 500px;
+	background: rgba(0,0,0,0.4);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 90;
+	transition:all .5s;
+}
+.in_sec_tit,.in_sec_intro,.know_more{
+	z-index: 99;
+	transition:all .5s;
+}
+/*限制两行，超出省略*/
+.in_sec_tit,.in_sec_intro{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.in_sec_tit{
+	width: 340px;
+	position: absolute;
+	top: 38px;
+	left: 30px;
+	font-size: 30px;
+	color: #fff;
+	line-height: 1.5;
+
+}
+.in_sec_intro{
+	width: 340px;
+	position: absolute;
+	top: 120px;
+	left: 30px;
+	margin-top: 20px;
+	font-size: 16px;
+	color: #fff;
+	line-height: 1.5;
+}
+.know_more{
+	position: absolute;
+	bottom: -45px;
+	left: 30px;
+	width: 120px;
+	height: 44px;
+	text-align: center;
+	line-height: 44px;
+	color: #fff;
+	font-size: 18px;
+	background:#ce1d19;
+}
+
+/*article*/
+.in_art_intro{
+	width: 1200px;
+	margin: 60px auto 18px;
+}
+.in_art_intro span{
+	font-size: 30px;
+	color: #1e1e1e;
+}
+.in_art_intro p,.in_active p{
+	font-size: 20px;
+	color: #999;
+	margin-top: 10px;
+}
+
+.in_art_intro img,.in_active img{
+	margin: 5px 0 0 10px;
+}
+.in_art_content{
+	margin: 0 auto;
+	width: 1200px;
+	border-top: 2px solid #e8e8e8;
+}
+.in_art_option{
+	width: 1200px;
+	padding: 54px 0 50px;
+	border-bottom: 2px dashed #e8e8e8;
+}
+
+.in_ct_pho{
+	width: 320px;
+
+}
+.in_ct_main{
+	width: 840px;
+
+}
+.in_main_tit{
+	font-size: 30px;
+	color: #1e1e1e;
+}
+.in_main_ct{
+	font-size: 16px;
+	line-height: 1.5;
+	color: #666;
+	margin: 35px auto 90px;
+}
+.in_main_time{
+	font-size: 16px;
+	color: #999;
+}
+.in_main_read{
+	margin-left: 15px;
+}
+.in_loadingmore{
+	width: 18px;
+	height: 18px;
+	margin:40px auto 30px;
+	text-align: center;
+	cursor: pointer;
+	background: url(../images/sy-rwtj-xx-ydj.png)no-repeat;
+}
+.in_loadingmore:hover{
+	background: url(../images/sy-rwtj-xx-wdj.png)no-repeat;
+}
+
+.in_active{
+	width: 1200px;
+	margin: 60px auto 0;
+	padding-bottom: 16px;
+	border-bottom: 2px solid #e8e8e8;
+}
+.in_active span{
+	font-size: 30px;
+	color: #1e1e1e;
+}
+.in_act_content{
+	width: 1200px;
+	margin: 30px auto 60px;
+	border: 1px solid #e8e8e8;
+}
+.in_act_ct_pho{
+	width: 700px;
+}
+.in_act_main{
+	width: 490px;
+	padding:28px 0 0 40px;
+	display: none;
+}
+.in_main_active{
+	display: block;
+}
+.in_act_tit{
+	font-size: 36px;
+	color: #1e1e1e;
+}
+.in_act_ct{
+	font-size: 16px;
+	color: #666;
+	line-height: 1.5;
+	width: 410px;
+
+}
+.in_ct_intro{
+	margin: 18px 0 36px;
+	width: 410px;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.in_act_intro{
+	margin-bottom: 6px;
+}
+.in_immediately{
+	display: block;
+	margin-top: 22px;
+	width: 300px;
+	height: 56px;
+	text-align: center;
+	line-height: 56px;
+	color: #1e1e1e;
+	font-size: 26px;
+	border: 1px solid #1e1e1e;
+}
+.in_immediately:hover{
+	background: #1e1e1e;
+	color: #fff;
+	cursor: pointer;
+}
+.in_cooperative{
+	width: 1200px;
+	margin: 0 auto;
+}
+.in_cooperative img{
+	width: 240px;
+	height: 100px;
+	float: left;
+}
+
+
+/*********** index End***************/
+
+
+
+/*********** industry Start ***************/
+
+
+
+/*********** industry End ***************/
+

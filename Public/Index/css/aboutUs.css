@@ -1,0 +1,398 @@
+/*
+* @description: 中创产业研究院aboutUs.html
+* @author: huangxiang
+* @update: name (2017-09-22 11:30)
+*/
+
+.about_us_navbox {
+    position: fixed;
+    top: 126px;
+    left: 50%;
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+    background-color:rgb(180,180,180);
+    height: 162px;
+    z-index: 9;
+}
+.about_us_nav {
+    width:1200px; 
+    margin:0 auto;
+    height:162px; 
+}
+
+.aun_list {
+    float:left; 
+    height:162px; 
+    width:20%; 
+    overflow:hidden;
+    position:relative; 
+    cursor:pointer;
+    transition: all .5s;
+    -moz-transition: all .5s;  
+    -webkit-transition: all .5s;   
+    -o-transition: all .5s;   
+}
+.select_aunlist {
+    width:60%;
+}
+#about_touwho {
+    background: url(../images/aboutus-nav-brief.png)no-repeat;
+    /*background-size: 100% 100%;*/
+    /*background-color:rgb(19,181,142);*/
+}
+#about_gd {
+     background: url(../images/aboutus-nav-team.png)no-repeat;
+     /*background-size: 100% 100%;*/
+    /*background-color:rgb(255,217,0);*/
+}
+#about_team {
+     background: url(../images/aboutus-nav-history.jpg)no-repeat;
+     /*background-size: 100% 100%;*/
+    /*background-color:rgb(46,45,89);*/
+}
+
+.aun_open_box {
+    position:absolute; width:80%; top:15px; left:-120%;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;	/* Firefox 4 */
+    -webkit-transition: all 0.5s;	/* Safari 和 Chrome */
+    -o-transition: all 0.5s;	/* Opera */
+}
+.aun_om_left img {
+    height:180px;
+}
+.aun_om_left {
+    float:left;
+}
+.aun_om_right {
+    float:right; text-align:right; color:#fff;
+}
+.aun_omr_cn {
+    line-height:24px; 
+    font-size:30px; 
+    margin-top:10px;
+}
+.aun_omr_en {
+    line-height:28px; font-size:24px;margin-top:5px;
+}
+.aun_colse_box img {
+    width:85%;
+}
+.aun_colse_box {
+    font-size: 22px;
+    width: 20px;
+    position:absolute; top:20px; right:40px;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;	/* Firefox 4 */
+    -webkit-transition: all 0.5s;	/* Safari 和 Chrome */
+    -o-transition: all 0.5s;	/* Opera */
+    color: #fff;
+}
+#about_gd .aun_om_right {
+    color:#fff;
+}
+#about_team .aun_omr_cn {
+    color:#fff;
+}
+#about_team .aun_omr_en {
+    color:#12b58d;
+}
+
+.select_aunlist .aun_colse_box {
+    top:100%;
+}
+.select_aunlist .aun_open_box {
+     top:15px; left:10%;
+}
+
+.about_us_text {
+    width:1080px; margin:0 auto; padding:60px 0;
+}
+
+.aut_left {
+    width:60%; float:left;
+}
+.aut_right img {
+    width:100%;
+}
+.aut_right {
+    width:33%; float:right;
+}
+.aut_left_cn {
+    color:#12b58d;line-height:24px; font-size:24px;  margin-top:25px;
+}
+.aut_left_en {
+    color:#dfdfdf;line-height:28px; font-size:24px; margin-top:5px;
+}
+.aut_left_text p {
+    margin-top:10px;
+}
+.aut_left_text {
+    line-height:26px; color:#141215; font-size:14px; margin-top:35px;
+}
+
+
+/*主要股东*/
+.st_one_left p {
+    margin-bottom:25px;
+}
+.st_one_left {
+    width:73%; float:left; color:#141215; line-height:28px; font-size:14px;
+}
+.st_one_right {
+    width:25%; float:right;
+}
+.st_one:hover {
+    cursor:pointer;
+    -moz-box-shadow: 2px 2px 5px #ccc; /* 老的 Firefox */
+    box-shadow: 2px 2px 5px #ccc;
+}
+.st_one {
+    margin-top:40px; margin-bottom:80px;
+}
+
+.st_one_right {
+    text-align:center;
+}
+.st_two {
+    margin-top:50px;
+}
+.st_two_box {
+    background-color:#f7f8f8; padding:15px 26% 15px 20px; position:relative;
+    -moz-box-shadow: 2px 2px 5px #ccc; /* 老的 Firefox */
+    box-shadow: 2px 2px 5px #ccc;
+}
+.st_tb_list {
+    position:relative; line-height:26px; font-size:14px; color:#141215; padding-left:30px; margin-top:10px;
+}
+.st_tb_liststyle {
+    width:10px; height:10px; border-radius:50%; background-color:#d28443; position:absolute; left:0px; top:8px;
+}
+.ry_hy_img img {
+    width:100%;
+}
+.ry_hy_img {
+    width:27%; position:absolute; right:-25px; bottom:-3px; text-align:right;
+}
+.ry_hy_title {
+    bottom:105%; right:26%;  position:absolute; color:#12b58d; line-height:28px; font-size:20px;
+}
+
+.about_main_ct{
+   width: 1200px;
+   margin: 50px auto 40px;   
+}
+.about_main_ct .about_main_tit{
+    font-size: 32px;
+    color: #1e1e1e;
+    text-align: center;
+}
+.about_main_ct p{
+    margin: 20px auto 0;
+    width: 800px;
+    text-indent: 2em;
+    line-height: 1.7;
+    color: #666;
+}
+.aun_omr_cn_mask{
+    width: 720px;
+    height: 162px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #3e2723;
+    opacity: 0.6;    
+}
+
+/*团队成员*/
+.about_team{
+    width: 1200px;
+    margin: 0 auto;    
+}
+.about_team_tit{
+    font-size: 34px;
+    color: #1e1e1e;
+    margin: 50px auto 20px;
+    text-align:center;
+}
+.about_team_ct{
+    width: 800px;
+    text-indent: 2em;
+    font-size: 16px;
+    color: #666;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+.about_team_pic{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about_team_member{
+    margin: 40px auto;
+    width: 910px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid #eee;
+}
+.about_team_member_pho{
+    width: 214px;
+    height: 286px;
+}
+.about_team_member_pho img{
+    width: 100%;
+}
+.about_team_member_intro{
+    width: 646px;
+    
+}
+.about_name{
+    font-size: 28px;
+    color: #1e1e1e;
+    margin: 20px 0 28px;
+}
+.about_pst1{
+    font-size: 18px;
+    color: #1e1e1e;
+    margin-left: 20px;
+}
+.about_pst2{
+    font-size: 18px;
+    color: #1e1e1e;
+    margin-left: 14px;
+}
+.about_intro_ct{
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+    margin: 20px 0;
+}
+.about_adviser_main{
+    width: 860px;
+    margin: 20px auto 0;
+    cursor: pointer;
+}
+.about_adviser_member{
+    width: 860px;
+    height: 96px;
+    position:relative;
+    background: #f4f4f4;
+}
+.about_adviser_member_name{
+    width: 158px;
+    height: 58px;
+    text-align: center;
+    line-height: 58px;
+    font-size: 28px;
+    color: #333;
+    border-right: 1px solid #ce1d19;
+    background: #f4f4f4;
+    margin-top: 20px;
+}
+.about_adviser_member_pst{
+    width: 652px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+    margin-top: 24px;
+}
+.about_adviser_jt{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.about_adviser_member_intro{
+    width: 792px;
+    margin: 30px auto 0;
+    padding: 30px 0 60px 0;
+    border-bottom: 1px solid #eee;
+    display: none;
+}
+.about_adviser_intro_pho{
+    width: 176px;
+}
+.about_adviser_intro_pho img{
+    width: 100%;
+}
+.about_adviser_right{
+    width: 566px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+}
+
+/*dev*/
+.div_fix_wrap{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.dev_fix{
+    position: fixed;
+    width: 1200px;
+    top: 288px;
+    left: 20%;
+    /*z-index: -10;*/
+
+}
+
+.dev_fix_nav{
+    padding-left: 100px;
+    color: #666;
+    font-size: 20px;
+    background: #fff;
+    height: 44px;
+    padding-top: 30px;
+}
+.dev_fix_nav span{
+    margin-right: 66px;
+
+}
+
+.dev_fix_time{
+    margin-left: 100px;
+    margin-top: 38px;
+}
+.dev_fix_year{
+    width: 94px;
+    font-size: 40px;
+    color: #1e1e1e;
+    margin-bottom: 30px;
+    display: inline-block;
+    font-family: "方正兰亭特黑简体";
+}
+.div_fix_date{
+    width: 106px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+    display: block;
+}
+
+.dev_main{
+    width: 590px;
+    margin: 275px 0 0 40%;
+}
+.dev_main_tit{
+    font-size: 18px;
+    color: #1e1e1e;
+    margin: 20px 0;
+}
+.dev_main_date{
+    font-size: 14px;
+    color: #666;
+
+}
+.dev_main_ct{
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+.dev_main img{
+    display: block;
+    width: 486px;
+    height: 322px;
+    margin: 30px auto 20px;
+}
