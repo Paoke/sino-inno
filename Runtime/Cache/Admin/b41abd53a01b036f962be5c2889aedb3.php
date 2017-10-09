@@ -74,14 +74,14 @@
                            onClick="article_start(this,'<?php echo ($vo["arid"]); ?>','1')" href="javascript:;" title="发布">
                             <i class="Hui-iconfont">&#xe603;</i>
                         </a><?php endif; ?>
-                    <a style="text-decoration:none" class="ml-5"
-                       onClick="order(this,'MoveUp','<?php echo ($vo["arid"]); ?>')" href="javascript:;" title="上移">
-                        <i class="Hui-iconfont">&#xe679;</i>
-                    </a>
-                    <a style="text-decoration:none" class="ml-5"
-                       onClick="order(this,'MoveDown','<?php echo ($vo["arid"]); ?>')" href="javascript:;" title="下移">
-                        <i class="Hui-iconfont">&#xe674;</i>
-                    </a>
+                    <!--<a style="text-decoration:none" class="ml-5"-->
+                       <!--onClick="order(this,'MoveUp','<?php echo ($vo["arid"]); ?>')" href="javascript:;" title="上移">-->
+                        <!--<i class="Hui-iconfont">&#xe679;</i>-->
+                    <!--</a>-->
+                    <!--<a style="text-decoration:none" class="ml-5"-->
+                       <!--onClick="order(this,'MoveDown','<?php echo ($vo["arid"]); ?>')" href="javascript:;" title="下移">-->
+                        <!--<i class="Hui-iconfont">&#xe674;</i>-->
+                    <!--</a>-->
 
                     <a style="text-decoration:none" class="ml-5" 
                        onClick="article_edit('文章编辑','/index.php/Admin/Article/editArticle?arid=<?php echo ($vo["arid"]); ?>','<?php echo ($vo["arid"]); ?>')"  href="javascript:;" title="编辑">
@@ -105,7 +105,7 @@
 <script type="text/javascript" src="<?php echo (ADMIN_STATIC_HUI_JS_URL); ?>H-ui.admin.js"></script>
 <script type="text/javascript">
     $('.table-sort').dataTable({
-        //"aaSorting": [[0, "desc"]],//默认第几个排序
+        "aaSorting": [[0, "desc"]],//默认第几个排序
         "ordering":false,
         "bStateSave": true,//状态保存
         "aoColumnDefs": [

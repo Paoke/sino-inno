@@ -30,6 +30,7 @@
     <body>
         <article class="page-container">
             <form action="" method="post" class="form form-horizontal" id="form-activity-add">
+                <input type="hidden" id="indeximg_position" name="indeximg_position" value="<?php echo ($arrData['actimg']); ?>">
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>标题：</label>
                     <div class="formControls col-xs-8 col-sm-5">
@@ -85,8 +86,17 @@
                 </div>
 
                 <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">* </span>宣传图：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="file" class="indeximg" name="indeximg" onchange="upload('indeximg')"/><span class="c-red" id="indeximg_success">(图片规格：700*366)</span>
+                        <p><br><img src="<?php echo (UPLOAD_URL); echo ($arrData['actimg']); ?>" id="indeximg_see" style="width: 700px;height: 366px;"></p>
+                    </div>
+                </div>
+
+
+                <div class="row cl">
                     <div class="col-xs-2 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                        <input class="btn btn-primary radius" type="submit" id="btn_submit" value="&nbsp;&nbsp;修改&nbsp;&nbsp;">
+                        <input class="btn btn-primary radius" type="button" id="btn_submit" value="&nbsp;&nbsp;修改&nbsp;&nbsp;">
                     </div>
                 </div>
             </form>
@@ -108,56 +118,27 @@
 
         <!--请在下方写此页面业务相关的脚本-->
         <script type="text/javascript">
-            $(function () {
-                $("#form-activity-add").validate({
-                    rules: {
-                        title: {
-                            required: true
-                        },
-                        summary: {
-                            required: true
-                        },
-                        start_time: {
-                            required: true
-                        },
-                        end_time: {
-                            required: true
-                        },
-                        expense: {
-                            required: true
-                        },
-                        address: {
-                            required: true
-                        },
-                        link: {
-                            required: true
-                        }
-                    },
-                    onkeyup: false,
-                    focusCleanup: true,
-                    success: "valid",
-                    submitHandler: function (form) {
+            $('#btn_submit').on('click', function () {
+                var data = {};
+                var t = $('#form-activity-add').serializeArray();
+                $.each(t, function() {
+                    data[this.name] = this.value;
+                });
 
-                        var data = {};
-                        var t = $('#form-activity-add').serializeArray();
-                        $.each(t, function () {
-                            data[this.name] = this.value;
+                $.post('/index.php/Admin/Activity/editActivity?acid=<?php echo ($arrData["acid"]); ?>', data, function (ret) {
+                    if (ret == 'true') {
+                        layer.msg('上传成功!', {icon: 1, time: 1000},function(){
+                            var index = parent.layer.getFrameIndex(window.name);
+
+                            parent.layer.close(index);
                         });
 
-                        $.post('/index.php/Admin/Activity/editActivity?acid=<?php echo ($arrData["acid"]); ?>', data, function (ret) {
-                            if (ret == 'true') {
-                                layer.msg('修改成功!', {icon: 1, time: 1000},function(){
-                                    var index = parent.layer.getFrameIndex(window.name);
-                                    parent.layer.close(index);
-                                });
-                            } else {
-                                layer.msg('修改失败!', {icon: 1, time: 1000});
-                            }
-
-                        }, 'text');
+                    } else {
+                        layer.msg('上传失败!', {icon: 2, time: 1000});
                     }
-                });
+                },'text');
             });
+
 
         </script>
         <!--/请在上方写此页面业务相关的脚本-->

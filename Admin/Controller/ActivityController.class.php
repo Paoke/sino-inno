@@ -10,7 +10,7 @@ class ActivityController extends CommonControllers
 
     public function activityList()
     {
-        $arrData = D('activity')->select();
+        $arrData = D('activity')->order('acid desc')->select();
         $this->assign('arrData', $arrData);
         $this->assign('size', sizeof($arrData));
         $this->display();
@@ -18,6 +18,7 @@ class ActivityController extends CommonControllers
 
     public function addActivity(){
         if(IS_POST){
+            $_POST['actimg']=$_POST['indeximg_position'];
             $intNum = D('activity')->add($_POST);
             if ($intNum) {
                 echo 'true';
@@ -31,6 +32,7 @@ class ActivityController extends CommonControllers
 
     public function editActivity($acid){
         if(IS_POST){
+            $_POST['actimg']=$_POST['indeximg_position'];
             $intNum=D('activity')->where("acid=$acid")->save($_POST);
             if ($intNum) {
                 echo 'true';

@@ -1,14 +1,14 @@
-<!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>中创产业研究院</title>
-	<link rel="shortcut icon" href="{$Think.INDEX_IMAGES_URL}favicon.ico">
+	<link rel="shortcut icon" href="<?php echo (INDEX_IMAGES_URL); ?>favicon.ico">
 	<meta name="description" content="中创产业研究院于2014年正式成立，由国内外著名高校支持，中大创新谷、中大创投和各知名产业集团联合筹措成立的新型科研组织。中创产业研究院以“研究产业，服务产业，发展产业”为理念，以构建新兴产业发展研究基地和智库为基本方向，为国家产业发展提供智库支持，促进产业投融资活动的高效开展。中创产业研究院自成立以来，已联合政府部门、高校院所、社会机构等举办多场产业论坛，并发表多篇行业研究报告。同时，还与各行业专业平台联合出版发行了《众筹之路》和《六众之路》等书籍。" />
 	<meta name="keywords" content="中创产业研究院、研究产业、服务产业、发展产业"/>
-	<link rel="stylesheet" href="{$Think.INDEX_CSS_URL}swiper.css">
-	<link rel="stylesheet" href="{$Think.INDEX_CSS_URL}common.css">
-	<link rel="stylesheet" href="{$Think.INDEX_CSS_URL}index.css">
+	<link rel="stylesheet" href="<?php echo (INDEX_CSS_URL); ?>swiper.css">
+	<link rel="stylesheet" href="<?php echo (INDEX_CSS_URL); ?>common.css">
+	<link rel="stylesheet" href="<?php echo (INDEX_CSS_URL); ?>index.css">
 </head>
 <body class="in_body">
 	<!--  banner,nav begin-->
@@ -16,7 +16,7 @@
 			<div class="in_search clear">
 				<div class="in_search_left fl clear">
 					<div class="in_search_logo fl">
-						<img src="{$Think.INDEX_IMAGES_URL}sy-logo.png" alt="">
+						<img src="<?php echo (INDEX_IMAGES_URL); ?>sy-logo.png" alt="">
 					</div>
 					<p class="in_search_left_word fl">聚合创新，合作共赢</p>
 				</div>
@@ -24,12 +24,12 @@
 					<div class="clear in_inputDiv">
 						<input class="fl in_input" type="text" placeholder="找分析，搜热门......">
 						<div class="in_search_icon fr">
-							<img class="in_WX" src="{$Think.INDEX_IMAGES_URL}sy-sousuo-wdj.png" alt="">
+							<img class="in_WX" src="<?php echo (INDEX_IMAGES_URL); ?>sy-sousuo-wdj.png" alt="">
 						</div>
 					</div>
 
 					<div class="in_codeDiv">
-						<img class="in_QRcode" src="{$Think.INDEX_IMAGES_URL}sy-erweima.png" alt="">
+						<img class="in_QRcode" src="<?php echo (INDEX_IMAGES_URL); ?>sy-erweima.png" alt="">
 					</div>
 				</div>
 			</div>
@@ -38,9 +38,7 @@
 		<div class="in_banner">
 			<div class="swiper-container" id="swiper-container1">
 			 	<div class="swiper-wrapper">
-					<foreach name="arrBanner" item="vo" key="k">
-			  	    <div class="swiper-slide"><img src="{$Think.UPLOAD_URL}{$vo.img}" alt=""></div>
-					</foreach>
+					<?php if(is_array($arrBanner)): foreach($arrBanner as $k=>$vo): ?><div class="swiper-slide"><img src="<?php echo (UPLOAD_URL); echo ($vo["img"]); ?>" alt=""></div><?php endforeach; endif; ?>
 			 	</div>
 			 	<div class="swiper-pagination"></div>
 			</div>
@@ -48,20 +46,20 @@
 		 <!-- 首页特定导航栏 -->
 		<div class="in_nav_wrap" style="display:block;">
 			<div class="in_nav clear">
-				<a href="__MODULE__/Index/index" class="in_nav_a fl">
-					<img class="in_nav_icon" src="{$Think.INDEX_IMAGES_URL}home-icon-home.png" alt="">
+				<a href="/index.php/Index/Index/index" class="in_nav_a fl">
+					<img class="in_nav_icon" src="<?php echo (INDEX_IMAGES_URL); ?>home-icon-home.png" alt="">
 					<p class="in_nav_l">首页</p>
 				</a>
-				<a href="__MODULE__/Article/article1" class="in_nav_a fl">
-					<img class="in_nav_icon" src="{$Think.INDEX_IMAGES_URL}home-icon-orientation.png" alt="">
+				<a href="/index.php/Index/Article/article1" class="in_nav_a fl">
+					<img class="in_nav_icon" src="<?php echo (INDEX_IMAGES_URL); ?>home-icon-orientation.png" alt="">
 					<p class="in_nav_l">产业方向</p>
 				</a>
 				<a href="trade.html" class="in_nav_a fl">
-					<img class="in_nav_icon" src="{$Think.INDEX_IMAGES_URL}home-icon-news.png" alt="">
+					<img class="in_nav_icon" src="<?php echo (INDEX_IMAGES_URL); ?>home-icon-news.png" alt="">
 					<p class="in_nav_l">行业资讯</p>
 				</a>
 				<a href="aboutUsIntroduce.html" class="in_nav_a fl">
-					<img class="in_nav_icon" src="{$Think.INDEX_IMAGES_URL}home-icon-about-us.png" alt="">
+					<img class="in_nav_icon" src="<?php echo (INDEX_IMAGES_URL); ?>home-icon-about-us.png" alt="">
 					<p class="in_nav_l">关于我们</p>
 				</a>
 			</div>
@@ -80,56 +78,50 @@
 	<!--  news begin-->
 		<p class="in_news_title">最新资讯</p>
 		<div class="in_news clear">
-			<for start="0" end="3">
-				<div class="in_news_section fl" style="background:url({$Think.UPLOAD_URL}{$arrArticle[$i].indeximg})";>
+			<?php $__FOR_START_18157__=0;$__FOR_END_18157__=3;for($i=$__FOR_START_18157__;$i < $__FOR_END_18157__;$i+=1){ ?><div class="in_news_section fl" style="background:url(<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["indeximg"]); ?>)";>
 					<div class="in_news_mask"></div>
 					<p class="in_sec_tit">
-						{$arrArticle[$i].title}
+						<?php echo ($arrArticle[$i]["title"]); ?>
 					</p>
-					<p class="in_sec_intro">{$arrArticle[$i].summary}......</p>
+					<p class="in_sec_intro"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
 
 					<a href="" class="know_more">了解更多</a>
-				</div>
-			</for>
+				</div><?php } ?>
 		</div>
 	<!--  news end-->
 
 	<!--  article begin-->
 		<div class="in_art_intro clear">
 			<span class="fl">热文推荐</span>
-			<a href=""><p class="fr">更多<img src="{$Think.INDEX_IMAGES_URL}sy-gd-wdj.png" alt=""></p></a>
+			<a href=""><p class="fr">更多<img src="<?php echo (INDEX_IMAGES_URL); ?>sy-gd-wdj.png" alt=""></p></a>
 		</div>
 
 		<div class="in_art_content ">
-			<for start="3" end="5">
-				<a href="">
+			<?php $__FOR_START_6434__=3;$__FOR_END_6434__=5;for($i=$__FOR_START_6434__;$i < $__FOR_END_6434__;$i+=1){ ?><a href="">
 					<div class="in_art_option clear">
 						<div class="in_ct_pho fl">
-							<img src="{$Think.UPLOAD_URL}{$arrArticle[$i].thumbimg}" alt="">
+							<img src="<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["thumbimg"]); ?>" alt="">
 						</div>
 						<div class="in_ct_main fr">
-							<p class="in_main_tit">{$arrArticle[$i].title}</p>
-							<p class="in_main_ct">{$arrArticle[$i].summary}......</p>
-							<p class="in_main_time">{$arrArticle[$i].time}<span class="in_main_read">阅读({$arrArticle[$i].read_times})</span></p>
+							<p class="in_main_tit"><?php echo ($arrArticle[$i]["title"]); ?></p>
+							<p class="in_main_ct"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
+							<p class="in_main_time"><?php echo ($arrArticle[$i]["time"]); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
 						</div>
 					</div>
-				</a>
-			</for>
+				</a><?php } ?>
 			<div id="more" style="display: none;">
-				<for start="5" end="9">
-					<a href="">
+				<?php $__FOR_START_16307__=5;$__FOR_END_16307__=9;for($i=$__FOR_START_16307__;$i < $__FOR_END_16307__;$i+=1){ ?><a href="">
 						<div class="in_art_option clear">
 							<div class="in_ct_pho fl">
-								<img src="{$Think.UPLOAD_URL}{$arrArticle[$i].thumbimg}" alt="">
+								<img src="<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["thumbimg"]); ?>" alt="">
 							</div>
 							<div class="in_ct_main fr">
-								<p class="in_main_tit">{$arrArticle[$i].title}</p>
-								<p class="in_main_ct">{$arrArticle[$i].summary}......</p>
-								<p class="in_main_time">{$arrArticle[$i].time}<span class="in_main_read">阅读({$arrArticle[$i].read_times})</span></p>
+								<p class="in_main_tit"><?php echo ($arrArticle[$i]["title"]); ?></p>
+								<p class="in_main_ct"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
+								<p class="in_main_time"><?php echo ($arrArticle[$i]["time"]); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
 							</div>
 						</div>
-					</a>
-				</for>
+					</a><?php } ?>
 			</div>
 		</div>
 		<div class="in_loadingmore"></div>
@@ -144,9 +136,7 @@
 			<div class="in_act_ct_pho fl">
 				<div class="swiper-container" id="swiper-container2">
 				    <div class="swiper-wrapper">
-						<foreach name="arrActivity" item="vo" >
-					    	<div class="swiper-slide"><img src="{$Think.UPLOAD_URL}{$vo.actimg}" alt=""></div>
-						</foreach>
+						<?php if(is_array($arrActivity)): foreach($arrActivity as $key=>$vo): ?><div class="swiper-slide"><img src="<?php echo (UPLOAD_URL); echo ($vo["actimg"]); ?>" alt=""></div><?php endforeach; endif; ?>
 				    </div>
 				    <!-- 自定义id，控制分页器属性 swiper.css  line 192 -->
 				    <div class="swiper-pagination" id="swiper-pagination2"></div>
@@ -154,39 +144,31 @@
 
 			</div>
 			<!-- 轮播控制tab -->
-			<foreach name="arrActivity" item="vo" key="k">
-				<if condition="$k eq 0">
-					<div class="in_act_main fr in_main_active">
-						<p class="in_act_tit">{$vo.title}</p>
+			<?php if(is_array($arrActivity)): foreach($arrActivity as $k=>$vo): if($k == 0): ?><div class="in_act_main fr in_main_active">
+						<p class="in_act_tit"><?php echo ($vo["title"]); ?></p>
 						<div class="in_act_ct">
-							<p class="in_ct_intro">{$vo.summary}......</p>
-							<p class="in_act_intro">时间：{$vo.start_time}-{$vo.end_time}</p>
-							<p class="in_act_intro">地点：{$vo.address}</p>
-							<p>费用：{$vo.expense}</p>
+							<p class="in_ct_intro"><?php echo ($vo["summary"]); ?>......</p>
+							<p class="in_act_intro">时间：<?php echo ($vo["start_time"]); ?>-<?php echo ($vo["end_time"]); ?></p>
+							<p class="in_act_intro">地点：<?php echo ($vo["address"]); ?></p>
+							<p>费用：<?php echo ($vo["expense"]); ?></p>
 						</div>
-						<if condition="$vo.status eq 1">
-						<a href="{$vo.link}" target="_blank" class="in_immediately">立即报名</a>
-						<else/>
-							<a href="javascript:" class="in_immediately">活动结束</a>
-						</if>
+						<?php if($vo["status"] == 1): ?><a href="<?php echo ($vo["link"]); ?>" target="_blank" class="in_immediately">立即报名</a>
+						<?php else: ?>
+							<a href="javascript:" class="in_immediately">活动结束</a><?php endif; ?>
 					</div>
-					<else/>
+					<?php else: ?>
 					<div class="in_act_main fr">
-						<p class="in_act_tit">{$vo.title}</p>
+						<p class="in_act_tit"><?php echo ($vo["title"]); ?></p>
 						<div class="in_act_ct">
-							<p class="in_ct_intro">{$vo.summary}......</p>
-							<p class="in_act_intro">时间：{$vo.start_time}-{$vo.end_time}</p>
-							<p class="in_act_intro">地点：{$vo.address}</p>
-							<p>费用：{$vo.expense}</p>
+							<p class="in_ct_intro"><?php echo ($vo["summary"]); ?>......</p>
+							<p class="in_act_intro">时间：<?php echo ($vo["start_time"]); ?>-<?php echo ($vo["end_time"]); ?></p>
+							<p class="in_act_intro">地点：<?php echo ($vo["address"]); ?></p>
+							<p>费用：<?php echo ($vo["expense"]); ?></p>
 						</div>
-						<if condition="$vo.status eq 1">
-							<a href="{$vo.link}" target="_blank" class="in_immediately">立即报名</a>
-							<else/>
-							<a href="javascript:" class="in_immediately">活动结束</a>
-						</if>
-					</div>
-				</if>
-			</foreach>
+						<?php if($vo["status"] == 1): ?><a href="<?php echo ($vo["link"]); ?>" target="_blank" class="in_immediately">立即报名</a>
+							<?php else: ?>
+							<a href="javascript:" class="in_immediately">活动结束</a><?php endif; ?>
+					</div><?php endif; endforeach; endif; ?>
 		</div>
 	<!--  active end-->
 
@@ -198,29 +180,17 @@
 		  <div class="swiper-wrapper">
 		    <div class="swiper-slide">
 		    	<div class="in_cooperative clear">
-					<foreach name="arrCooperation" item="vo" key="k">
-						<in name="vo.category" value="1">
-							<img src="{$Think.UPLOAD_URL}{$vo.logo}" alt="">
-						</in>
-					</foreach>
+					<?php if(is_array($arrCooperation)): foreach($arrCooperation as $k=>$vo): if(in_array(($vo["category"]), explode(',',"1"))): ?><img src="<?php echo (UPLOAD_URL); echo ($vo["logo"]); ?>" alt=""><?php endif; endforeach; endif; ?>
 				</div>
 			</div>
 		    <div class="swiper-slide">
 		    	<div class="in_cooperative clear">
-					<foreach name="arrCooperation" item="vo" key="k">
-						<in name="vo.category" value="2">
-							<img src="{$Think.UPLOAD_URL}{$vo.logo}" alt="">
-						</in>
-					</foreach>
+					<?php if(is_array($arrCooperation)): foreach($arrCooperation as $k=>$vo): if(in_array(($vo["category"]), explode(',',"2"))): ?><img src="<?php echo (UPLOAD_URL); echo ($vo["logo"]); ?>" alt=""><?php endif; endforeach; endif; ?>
 				</div>
 		    </div>
 		    <div class="swiper-slide">
     	    	<div class="in_cooperative clear">
-					<foreach name="arrCooperation" item="vo" key="k">
-						<in name="vo.category" value="3">
-							<img src="{$Think.UPLOAD_URL}{$vo.logo}" alt="">
-						</in>
-					</foreach>
+					<?php if(is_array($arrCooperation)): foreach($arrCooperation as $k=>$vo): if(in_array(($vo["category"]), explode(',',"3"))): ?><img src="<?php echo (UPLOAD_URL); echo ($vo["logo"]); ?>" alt=""><?php endif; endforeach; endif; ?>
     			</div>
 		    </div>
 		  </div>
@@ -256,9 +226,9 @@
 		</div>
 	<!-- footer end -->
 </body>
-<script src="{$Think.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
-<script src="{$Think.INDEX_JS_URL}common.js"></script>
-<script src="{$Think.INDEX_JS_URL}swiper.js"></script>
+<script src="<?php echo (INDEX_JS_URL); ?>jquery-3.0.0.min.js"></script>
+<script src="<?php echo (INDEX_JS_URL); ?>common.js"></script>
+<script src="<?php echo (INDEX_JS_URL); ?>swiper.js"></script>
 <script>
 	// 轮播
 	var mySwiper1 = new Swiper('#swiper-container1', {

@@ -12,10 +12,10 @@ $(".nav_wrap .nav a").each(function () {
 // 搜索栏图标
 $(".in_search_icon").on("click",function(){
 	$(this).css("background","#ce1d19");
-	$(this).find("img").attr("src","images/sy-sousuo-ydj.png")
+	$(this).find("img").attr("src","/Public/Index/images/sy-sousuo-ydj.png")
 })
 
-var return_top = '<img class="return_top_icon" src="Public/Index/images/icon-back-to-top.png" alt="">';
+var return_top = '<img class="return_top_icon" src="/Public/Index/images/icon-back-to-top.png" alt="">';
 $("body").append(return_top);
 $(window).scroll(function(){
 	var docTop = $(document).scrollTop();
