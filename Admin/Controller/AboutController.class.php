@@ -60,6 +60,7 @@ class AboutController extends CommonControllers
             }
         }else{
             $arrData=D('team')->where('teid='.$teid)->find();
+            $arrData['summary']=str_replace("<br>","\n",$arrData['summary']);
             $this->assign('arrData',$arrData);
             $this->display();
         }

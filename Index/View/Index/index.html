@@ -52,11 +52,11 @@
 					<img class="in_nav_icon" src="{$Think.INDEX_IMAGES_URL}home-icon-home.png" alt="">
 					<p class="in_nav_l">首页</p>
 				</a>
-				<a href="__MODULE__/Article/article1" class="in_nav_a fl">
+				<a href="__MODULE__/Article/article?acid=1" class="in_nav_a fl">
 					<img class="in_nav_icon" src="{$Think.INDEX_IMAGES_URL}home-icon-orientation.png" alt="">
 					<p class="in_nav_l">产业方向</p>
 				</a>
-				<a href="trade.html" class="in_nav_a fl">
+				<a href="__MODULE__/Article/trade" class="in_nav_a fl">
 					<img class="in_nav_icon" src="{$Think.INDEX_IMAGES_URL}home-icon-news.png" alt="">
 					<p class="in_nav_l">行业资讯</p>
 				</a>
@@ -69,9 +69,9 @@
 		<!-- 通用导航栏 -->
 		<div class="nav_wrap" style="display:none;z-index:999;">
 			<div class="nav clear">
-				<a href="index.html" class="fl">首页</a>
-				<a href="industry.html" class="fl">产业方向</a>
-				<a href="trade.html" class="fl">行业资讯</a>
+				<a href="__MODULE__/Index/index" class="fl">首页</a>
+				<a href="__MODULE__/Article/article?acid=1" class="fl">产业方向</a>
+				<a href="__MODULE__/Article/trade" class="fl">行业资讯</a>
 				<a href="aboutUsIntroduce.html" class="fl">关于我们</a>
 			</div>
 		</div>
@@ -88,7 +88,7 @@
 					</p>
 					<p class="in_sec_intro">{$arrArticle[$i].summary}......</p>
 
-					<a href="" class="know_more">了解更多</a>
+					<a href="__MODULE__/Article/detail?arid={$arrArticle[$i].arid}" class="know_more">了解更多</a>
 				</div>
 			</for>
 		</div>
@@ -102,7 +102,7 @@
 
 		<div class="in_art_content ">
 			<for start="3" end="5">
-				<a href="">
+				<a href="__MODULE__/Article/detail?arid={$arrArticle[$i].arid}">
 					<div class="in_art_option clear">
 						<div class="in_ct_pho fl">
 							<img src="{$Think.UPLOAD_URL}{$arrArticle[$i].thumbimg}" alt="">
@@ -110,14 +110,14 @@
 						<div class="in_ct_main fr">
 							<p class="in_main_tit">{$arrArticle[$i].title}</p>
 							<p class="in_main_ct">{$arrArticle[$i].summary}......</p>
-							<p class="in_main_time">{$arrArticle[$i].time}<span class="in_main_read">阅读({$arrArticle[$i].read_times})</span></p>
+							<p class="in_main_time">{$arrArticle[$i].time|strtotime|date='Y-m-d H:i',###}<span class="in_main_read">阅读({$arrArticle[$i].read_times})</span></p>
 						</div>
 					</div>
 				</a>
 			</for>
 			<div id="more" style="display: none;">
 				<for start="5" end="9">
-					<a href="">
+					<a href="__MODULE__/Article/detail?arid={$arrArticle[$i].arid}">
 						<div class="in_art_option clear">
 							<div class="in_ct_pho fl">
 								<img src="{$Think.UPLOAD_URL}{$arrArticle[$i].thumbimg}" alt="">
@@ -125,7 +125,7 @@
 							<div class="in_ct_main fr">
 								<p class="in_main_tit">{$arrArticle[$i].title}</p>
 								<p class="in_main_ct">{$arrArticle[$i].summary}......</p>
-								<p class="in_main_time">{$arrArticle[$i].time}<span class="in_main_read">阅读({$arrArticle[$i].read_times})</span></p>
+								<p class="in_main_time">{$arrArticle[$i].time|strtotime|date='Y-m-d H:i',###}<span class="in_main_read">阅读({$arrArticle[$i].read_times})</span></p>
 							</div>
 						</div>
 					</a>
@@ -133,7 +133,7 @@
 			</div>
 		</div>
 		<div class="in_loadingmore"></div>
-		<a href="industry.html" class="in_more">查看更多</a>
+		<a href="__MODULE__/Article/article?acid=1" class="in_more">查看更多</a>
 	<!--  article end-->
 
 	<!--  active begin-->
@@ -229,31 +229,7 @@
 	<!-- cooperative end -->
 
 	<!-- footer begin -->
-		<div class="in_footer">
-			<p class="in_footer_link">
-				<a href="">关于我们</a>
-				<a href="">联系我们</a>
-				<a href="">合作伙伴</a>
-				<a href="">法律声明</a>
-				<a href="">新浪微博</a>
-			</p>
-			<p class="in_friendly_link">
-				友情链接：
-				<a href="">中大创投</a>
-				<a href="">中大创新谷</a>
-				<a href="">广东医谷</a>
-				<a href="">庖丁技术</a>
-				<a href="">云珠沙龙</a>
-				<a href="">海鳖众筹</a>
-				<a href="">中创学院</a>
-				<a href="">SME</a>
-				<a href="">校园直通车</a>
-				<a href="">INNO-Talk</a>
-			</p>
-		</div>
-		<div class="in_ICP">
-			粤ICP备14039480号 Copyright © 2014-2017  中创研究院 版权所有       技术支持：广东庖丁技术开发股份有限公司
-		</div>
+	<include file="./Index/View/Common/footer.html"/>
 	<!-- footer end -->
 </body>
 <script src="{$Think.INDEX_JS_URL}jquery-3.0.0.min.js"></script>

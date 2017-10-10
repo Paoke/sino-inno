@@ -50,11 +50,11 @@
 					<img class="in_nav_icon" src="<?php echo (INDEX_IMAGES_URL); ?>home-icon-home.png" alt="">
 					<p class="in_nav_l">首页</p>
 				</a>
-				<a href="/index.php/Index/Article/article1" class="in_nav_a fl">
+				<a href="/index.php/Index/Article/article?acid=1" class="in_nav_a fl">
 					<img class="in_nav_icon" src="<?php echo (INDEX_IMAGES_URL); ?>home-icon-orientation.png" alt="">
 					<p class="in_nav_l">产业方向</p>
 				</a>
-				<a href="trade.html" class="in_nav_a fl">
+				<a href="/index.php/Index/Article/trade" class="in_nav_a fl">
 					<img class="in_nav_icon" src="<?php echo (INDEX_IMAGES_URL); ?>home-icon-news.png" alt="">
 					<p class="in_nav_l">行业资讯</p>
 				</a>
@@ -67,9 +67,9 @@
 		<!-- 通用导航栏 -->
 		<div class="nav_wrap" style="display:none;z-index:999;">
 			<div class="nav clear">
-				<a href="index.html" class="fl">首页</a>
-				<a href="industry.html" class="fl">产业方向</a>
-				<a href="trade.html" class="fl">行业资讯</a>
+				<a href="/index.php/Index/Index/index" class="fl">首页</a>
+				<a href="/index.php/Index/Article/article?acid=1" class="fl">产业方向</a>
+				<a href="/index.php/Index/Article/trade" class="fl">行业资讯</a>
 				<a href="aboutUsIntroduce.html" class="fl">关于我们</a>
 			</div>
 		</div>
@@ -78,14 +78,14 @@
 	<!--  news begin-->
 		<p class="in_news_title">最新资讯</p>
 		<div class="in_news clear">
-			<?php $__FOR_START_18157__=0;$__FOR_END_18157__=3;for($i=$__FOR_START_18157__;$i < $__FOR_END_18157__;$i+=1){ ?><div class="in_news_section fl" style="background:url(<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["indeximg"]); ?>)";>
+			<?php $__FOR_START_13348__=0;$__FOR_END_13348__=3;for($i=$__FOR_START_13348__;$i < $__FOR_END_13348__;$i+=1){ ?><div class="in_news_section fl" style="background:url(<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["indeximg"]); ?>)";>
 					<div class="in_news_mask"></div>
 					<p class="in_sec_tit">
 						<?php echo ($arrArticle[$i]["title"]); ?>
 					</p>
 					<p class="in_sec_intro"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
 
-					<a href="" class="know_more">了解更多</a>
+					<a href="/index.php/Index/Article/detail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>" class="know_more">了解更多</a>
 				</div><?php } ?>
 		</div>
 	<!--  news end-->
@@ -97,7 +97,7 @@
 		</div>
 
 		<div class="in_art_content ">
-			<?php $__FOR_START_6434__=3;$__FOR_END_6434__=5;for($i=$__FOR_START_6434__;$i < $__FOR_END_6434__;$i+=1){ ?><a href="">
+			<?php $__FOR_START_23437__=3;$__FOR_END_23437__=5;for($i=$__FOR_START_23437__;$i < $__FOR_END_23437__;$i+=1){ ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>">
 					<div class="in_art_option clear">
 						<div class="in_ct_pho fl">
 							<img src="<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["thumbimg"]); ?>" alt="">
@@ -105,12 +105,12 @@
 						<div class="in_ct_main fr">
 							<p class="in_main_tit"><?php echo ($arrArticle[$i]["title"]); ?></p>
 							<p class="in_main_ct"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
-							<p class="in_main_time"><?php echo ($arrArticle[$i]["time"]); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
+							<p class="in_main_time"><?php echo (date('Y-m-d H:i',strtotime($arrArticle[$i]["time"]))); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
 						</div>
 					</div>
 				</a><?php } ?>
 			<div id="more" style="display: none;">
-				<?php $__FOR_START_16307__=5;$__FOR_END_16307__=9;for($i=$__FOR_START_16307__;$i < $__FOR_END_16307__;$i+=1){ ?><a href="">
+				<?php $__FOR_START_8514__=5;$__FOR_END_8514__=9;for($i=$__FOR_START_8514__;$i < $__FOR_END_8514__;$i+=1){ ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>">
 						<div class="in_art_option clear">
 							<div class="in_ct_pho fl">
 								<img src="<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["thumbimg"]); ?>" alt="">
@@ -118,14 +118,14 @@
 							<div class="in_ct_main fr">
 								<p class="in_main_tit"><?php echo ($arrArticle[$i]["title"]); ?></p>
 								<p class="in_main_ct"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
-								<p class="in_main_time"><?php echo ($arrArticle[$i]["time"]); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
+								<p class="in_main_time"><?php echo (date('Y-m-d H:i',strtotime($arrArticle[$i]["time"]))); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
 							</div>
 						</div>
 					</a><?php } ?>
 			</div>
 		</div>
 		<div class="in_loadingmore"></div>
-		<a href="industry.html" class="in_more">查看更多</a>
+		<a href="/index.php/Index/Article/article?acid=1" class="in_more">查看更多</a>
 	<!--  article end-->
 
 	<!--  active begin-->
@@ -199,31 +199,31 @@
 	<!-- cooperative end -->
 
 	<!-- footer begin -->
-		<div class="in_footer">
-			<p class="in_footer_link">
-				<a href="">关于我们</a>
-				<a href="">联系我们</a>
-				<a href="">合作伙伴</a>
-				<a href="">法律声明</a>
-				<a href="">新浪微博</a>
-			</p>
-			<p class="in_friendly_link">
-				友情链接：
-				<a href="">中大创投</a>
-				<a href="">中大创新谷</a>
-				<a href="">广东医谷</a>
-				<a href="">庖丁技术</a>
-				<a href="">云珠沙龙</a>
-				<a href="">海鳖众筹</a>
-				<a href="">中创学院</a>
-				<a href="">SME</a>
-				<a href="">校园直通车</a>
-				<a href="">INNO-Talk</a>
-			</p>
-		</div>
-		<div class="in_ICP">
-			粤ICP备14039480号 Copyright © 2014-2017  中创研究院 版权所有       技术支持：广东庖丁技术开发股份有限公司
-		</div>
+	<div class="in_footer">
+    <p class="in_footer_link">
+        <a href="">关于我们</a>
+        <a href="">联系我们</a>
+        <a href="">合作伙伴</a>
+        <a href="">法律声明</a>
+        <a href="">新浪微博</a>
+    </p>
+    <p class="in_friendly_link">
+        友情链接：
+        <a href="">中大创投</a>
+        <a href="">中大创新谷</a>
+        <a href="">广东医谷</a>
+        <a href="">庖丁技术</a>
+        <a href="">云珠沙龙</a>
+        <a href="">海鳖众筹</a>
+        <a href="">中创学院</a>
+        <a href="">SME</a>
+        <a href="">校园直通车</a>
+        <a href="">INNO-Talk</a>
+    </p>
+</div>
+<div class="in_ICP">
+    粤ICP备14039480号 Copyright © 2014-2017  中创研究院 版权所有       技术支持：广东庖丁技术开发股份有限公司
+</div>
 	<!-- footer end -->
 </body>
 <script src="<?php echo (INDEX_JS_URL); ?>jquery-3.0.0.min.js"></script>

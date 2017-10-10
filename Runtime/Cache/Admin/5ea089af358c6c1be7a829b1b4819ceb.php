@@ -48,8 +48,8 @@
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>简介：</label>
                     <div class="formControls col-xs-8 col-sm-5">
-                        <textarea name="summary" id="summary" cols="" rows="" class="textarea" placeholder="少于100个字"
-                                  onKeyUp="textarealength(this, 100)"></textarea>
+                        <textarea name="summary" id="summary" cols="" rows="" class="textarea" placeholder="少于300个字"
+                                  onKeyUp="textarealength(this, 300)"></textarea>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">* </span>头像：</label>
                     <div class="formControls col-xs-8 col-sm-9">
                         <input type="file" class="img" name="img" onchange="upload('img')"><span class="c-red" id="img_success"></span>
-                        <br/><br/><img src="" id="img_see" width="240" height="100">
+                        <br/><br/><img src="" id="img_see" width="240" height="200">
                     </div>
                 </div>
 
@@ -104,6 +104,8 @@
                 $.each(t, function() {
                     data[this.name] = this.value;
                 });
+                var summary = data['summary'];
+                data['summary']=summary.replace(/\n|\r\n/g,"<br>");
                 if(data.img_position==""){
                     layer.msg('请上传图片', {icon: 7, time: 2000});
                     return false;

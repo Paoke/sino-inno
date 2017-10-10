@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中创产业研究院</title>
+    <link rel="shortcut icon" href="{$Think.INDEX_IMAGES_URL}favicon.ico">
+    <meta name="description" content="中创产业研究院于2014年正式成立，由国内外著名高校支持，中大创新谷、中大创投和各知名产业集团联合筹措成立的新型科研组织。中创产业研究院以“研究产业，服务产业，发展产业”为理念，以构建新兴产业发展研究基地和智库为基本方向，为国家产业发展提供智库支持，促进产业投融资活动的高效开展。中创产业研究院自成立以来，已联合政府部门、高校院所、社会机构等举办多场产业论坛，并发表多篇行业研究报告。同时，还与各行业专业平台联合出版发行了《众筹之路》和《六众之路》等书籍。" />
+    <meta name="keywords" content="中创产业研究院、研究产业、服务产业、发展产业"/>
+    <link rel="stylesheet" href="{$Think.INDEX_CSS_URL}common.css">
+    <link rel="stylesheet" href="{$Think.INDEX_CSS_URL}swiper.css">
+    <link rel="stylesheet" href="{$Think.INDEX_CSS_URL}industry.css">
+    <link rel="stylesheet" href="{$Think.INDEX_CSS_URL}page.css">
+</head>
+<body>
+<include file="./Index/View/Common/header.html"/>
+
+<!--  main begin-->
+<div class="main clear">
+    <div class="fl">
+        <div class="tab">
+            <div class="title">
+                <if condition="$acid eq 1">
+                    <a href="__MODULE__/Article/article?acid=1"><li style="color:#ce1d19">风险投资<div class="sideDiv" style="display:block;"></div></li></a>
+                    <else/>
+                    <a href="__MODULE__/Article/article?acid=1"><li>风险投资<div class="sideDiv"></div></li></a>
+                </if>
+                <if condition="$acid eq 2">
+                    <a href="__MODULE__/Article/article?acid=2"><li style="color:#ce1d19">金融产业<div class="sideDiv" style="display:block;"></div></li></a>
+                    <else/>
+                    <a href="__MODULE__/Article/article?acid=2"><li>金融产业<div class="sideDiv"></div></li></a>
+                </if>
+                <if condition="$acid eq 3">
+                    <a href="__MODULE__/Article/article?acid=3"><li style="color:#ce1d19">医疗产业<div class="sideDiv" style="display:block;"></div></li></a>
+                    <else/>
+                    <a href="__MODULE__/Article/article?acid=3"><li>医疗产业<div class="sideDiv"></div></li></a>
+                </if>
+                <if condition="$acid eq 4">
+                    <a href="__MODULE__/Article/article?acid=4"><li style="color:#ce1d19">新材料产业<div class="sideDiv" style="display:block;"></div></li></a>
+                    <else/>
+                    <a href="__MODULE__/Article/article?acid=4"><li>新材料产业<div class="sideDiv"></div></li></a>
+                </if>
+                <if condition="$acid eq 5">
+                    <a href="__MODULE__/Article/article?acid=5"><li style="margin:0;color:#ce1d19;">先进制造产业<div class="sideDiv" style="display:block;"></div></li></a>
+                    <else/>
+                    <a href="__MODULE__/Article/article?acid=5"><li style="margin:0;">先进制造产业<div class="sideDiv"></div></li></a>
+
+                </if>
+            </div>
+        </div>
+        <if condition="$arrData[0] eq null">
+            <else/>
+        <div class="tabContent" style="display:block;">
+            <foreach name="arrData" item="vo">
+                <a href="__MODULE__/Article/detail?arid={$vo.arid}">
+                    <div class="ind_art_wrap">
+                        <div class="ind_art_option clear" >
+                            <div class="ind_ct_pho fl">
+                                <img src="{$Think.UPLOAD_URL}{$vo.thumbimg}" alt="">
+                            </div>
+                            <div class="ind_ct_main fl">
+                                <p class="ind_main_tit">{$vo.title}</p>
+                                <p class="ind_main_ct">{$vo.summary}......</p>
+                                <p class="ind_main_time">{$vo.time|strtotime|date='Y-m-d H:i',###} <span class="in_main_read">阅读({$vo.read_times})</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </foreach>
+            <div class="pages" style="text-align: center;">
+                {$arrShow}
+            </div>
+        </div>
+        </if>
+
+    </div>
+
+    <div class="fr">
+        <div class="in_art_option_r" >
+            <p class="option_r_tt">小研推荐</p>
+            <if condition="$intCount eq 0">
+                <div style="padding-bottom: 40px;">
+                    <p>
+                        暂无推荐<br>
+                    </p>
+                </div>
+
+                <elseif condition="$intCount eq 1"/>
+                    <a href="__MODULE__/Article/detail?arid={$arrGroom[0].arid}">
+                        <div class="option_r_ct clear">
+                            <div class="ind_ct_pho_r fl">
+                                <img src="{$Think.UPLOAD_URL}{$arrGroom[0].thumbimg}" alt="">
+                            </div>
+                            <div class="ind_ct_main_r fr">
+                                <p class="ind_main_tit_r">{$arrGroom[0].title}</p>
+                                <p class="ind_main_time_r">{$arrGroom[0].time} </p>
+                                <p class="ind_main_read_r">阅读({$arrGroom[0].read_times})</p>
+                            </div>
+                        </div>
+                    </a>
+                <else/>
+                <for start="0" end="2">
+                    <a href="__MODULE__/Article/detail?arid={$arrGroom[$i].arid}">
+                        <div class="option_r_ct clear">
+                            <div class="ind_ct_pho_r fl">
+                                <img src="{$Think.UPLOAD_URL}{$arrGroom[$i].thumbimg}" alt="">
+                            </div>
+                            <div class="ind_ct_main_r fr">
+                                <p class="ind_main_tit_r">{$arrGroom[$i].title}</p>
+                                <p class="ind_main_time_r">{$arrGroom[$i].time|strtotime|date='Y-m-d H:i',###} </p>
+                                <p class="ind_main_read_r">阅读({$arrGroom[$i].read_times})</p>
+                            </div>
+                        </div>
+                    </a>
+                </for>
+            </if>
+        </div>
+
+        <div class="in_art_option_r" >
+
+            <if condition="$intCount lt 2">
+
+                <else/>
+                <p class="option_r_tt">本类热门</p>
+                    <for start="2" end="$intCount">
+                        <a href="__MODULE__/Article/detail?arid={$arrGroom[$i].arid}">
+                            <div class="option_r_ct clear">
+                                <div class="ind_ct_pho_r fl">
+                                    <img src="{$Think.UPLOAD_URL}{$arrGroom[$i].thumbimg}" alt="">
+                                </div>
+                                <div class="ind_ct_main_r fr">
+                                    <p class="ind_main_tit_r">{$arrGroom[$i].title}</p>
+                                    <p class="ind_main_time_r">{$arrGroom[$i].time|strtotime|date='Y-m-d H:i',###} </p>
+                                    <p class="ind_main_read_r">阅读({$arrGroom[$i].read_times})</p>
+                                </div>
+                            </div>
+                        </a>
+                    </for>
+            </if>
+
+            <div class="option_r_ct clear">
+
+                <div class="swiper-container" id="swiper-container4">
+                    <p class="option_r_tt">中创研究院出品</p>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="option_r_ct_pho">
+                                <img src="{$Think.INDEX_IMAGES_URL}cyfx-lzzl.png" alt="">
+                                <p class="option_r_ct_intro">
+                                    <span class="option_r_bsn">企业家</span>
+                                    <span>政策制定者以及广大创新创业人士案头应备之书</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="option_r_ct_pho">
+                                <img src="{$Think.INDEX_IMAGES_URL}cyfx-zczl.jpg" alt="">
+                                <p class="option_r_ct_intro">
+                                    <span class="option_r_bsn">众筹平台运营者</span>
+                                    <span>项目方及投资者必读手册，实现众多普通人的创业及投资梦想</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--  main end-->
+
+<!-- footer begin -->
+<include file="./Index/View/Common/footer.html"/>
+<!-- footer end -->
+</body>
+<script src="{$Think.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
+<script src="{$Think.INDEX_JS_URL}common.js"></script>
+<script src="{$Think.INDEX_JS_URL}swiper.js"></script>
+<script>
+    window.onload = function(){
+        var mySwiper4 = new Swiper('#swiper-container4', {
+            pagination : '.swiper-pagination',
+        });
+        $(".nav_wrap .nav a").eq(1).addClass('active');
+    }
+</script>
+</html>

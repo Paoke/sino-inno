@@ -1,8 +1,7 @@
 // 导航栏高亮
-var urlStr = location.href;  
-// console.log(urlStr); 
-$(".nav_wrap .nav a").each(function () {    
-  if ((urlStr + '/').indexOf($(this).attr('href')) > -1&&$(this).attr('href')!='') { 
+var urlStr = location.href;
+$(".nav_wrap .nav a").each(function () {
+  if ((urlStr).indexOf($(this).attr('href')) > -1&&$(this).attr('href')!='') {
     $(this).addClass('active'); 
   } else {  
     $(this).removeClass('active');  

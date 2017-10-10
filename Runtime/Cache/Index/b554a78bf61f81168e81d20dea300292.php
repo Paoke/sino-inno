@@ -40,7 +40,7 @@
     <div class="nav clear">
         <a href="/index.php/Index/Index/index" class="fl">首页</a>
         <a href="/index.php/Index/Article/article?acid=1" class="fl">产业方向</a>
-        <a href="trade.html" class="fl">行业资讯</a>
+        <a href="/index.php/Index/Article/trade" class="fl">行业资讯</a>
         <a href="aboutUsIntroduce.html" class="fl">关于我们</a>
     </div>
 </div>
@@ -51,15 +51,26 @@
     <div class="fl">
         <div class="tab">
             <div class="title">
-                <a href="/index.php/Index/Article/article1"><li style="color:#ce1d19">风险投资<div class="sideDiv" style="display:block;"></div></li></a>
-                <a href="/index.php/Index/Article/article2"><li>金融产业<div class="sideDiv"></div></li></a>
-                <a href="/index.php/Index/Article/article3"><li>医疗产业<div class="sideDiv"></div></li></a>
-                <a href="/index.php/Index/Article/article4"><li>新材料产业<div class="sideDiv"></div></li></a>
-                <a href="/index.php/Index/Article/article5"><li style="margin:0;">先进制造产业<div class="sideDiv"></div></li></a>
+                <?php if($acid == 1): ?><a href="/index.php/Index/Article/article?acid=1"><li style="color:#ce1d19">风险投资<div class="sideDiv" style="display:block;"></div></li></a>
+                    <?php else: ?>
+                    <a href="/index.php/Index/Article/article?acid=1"><li>风险投资<div class="sideDiv"></div></li></a><?php endif; ?>
+                <?php if($acid == 2): ?><a href="/index.php/Index/Article/article?acid=2"><li style="color:#ce1d19">金融产业<div class="sideDiv" style="display:block;"></div></li></a>
+                    <?php else: ?>
+                    <a href="/index.php/Index/Article/article?acid=2"><li>金融产业<div class="sideDiv"></div></li></a><?php endif; ?>
+                <?php if($acid == 3): ?><a href="/index.php/Index/Article/article?acid=3"><li style="color:#ce1d19">医疗产业<div class="sideDiv" style="display:block;"></div></li></a>
+                    <?php else: ?>
+                    <a href="/index.php/Index/Article/article?acid=3"><li>医疗产业<div class="sideDiv"></div></li></a><?php endif; ?>
+                <?php if($acid == 4): ?><a href="/index.php/Index/Article/article?acid=4"><li style="color:#ce1d19">新材料产业<div class="sideDiv" style="display:block;"></div></li></a>
+                    <?php else: ?>
+                    <a href="/index.php/Index/Article/article?acid=4"><li>新材料产业<div class="sideDiv"></div></li></a><?php endif; ?>
+                <?php if($acid == 5): ?><a href="/index.php/Index/Article/article?acid=5"><li style="margin:0;color:#ce1d19;">先进制造产业<div class="sideDiv" style="display:block;"></div></li></a>
+                    <?php else: ?>
+                    <a href="/index.php/Index/Article/article?acid=5"><li style="margin:0;">先进制造产业<div class="sideDiv"></div></li></a><?php endif; ?>
             </div>
         </div>
+        <?php if($arrData[0] == null): else: ?>
         <div class="tabContent" style="display:block;">
-            <?php if(is_array($arrData)): foreach($arrData as $key=>$vo): ?><a href="industryDetail.html">
+            <?php if(is_array($arrData)): foreach($arrData as $key=>$vo): ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($vo["arid"]); ?>">
                     <div class="ind_art_wrap">
                         <div class="ind_art_option clear" >
                             <div class="ind_ct_pho fl">
@@ -68,7 +79,7 @@
                             <div class="ind_ct_main fl">
                                 <p class="ind_main_tit"><?php echo ($vo["title"]); ?></p>
                                 <p class="ind_main_ct"><?php echo ($vo["summary"]); ?>......</p>
-                                <p class="ind_main_time"><?php echo ($vo["time"]); ?> <span class="in_main_read">阅读(<?php echo ($vo["read_times"]); ?>)</span></p>
+                                <p class="ind_main_time"><?php echo (date('Y-m-d H:i',strtotime($vo["time"]))); ?> <span class="in_main_read">阅读(<?php echo ($vo["read_times"]); ?>)</span></p>
                             </div>
                         </div>
                     </div>
@@ -76,37 +87,63 @@
             <div class="pages" style="text-align: center;">
                 <?php echo ($arrShow); ?>
             </div>
-        </div>
+        </div><?php endif; ?>
 
     </div>
 
     <div class="fr">
         <div class="in_art_option_r" >
             <p class="option_r_tt">小研推荐</p>
-            <?php $__FOR_START_14416__=0;$__FOR_END_14416__=2;for($i=$__FOR_START_14416__;$i < $__FOR_END_14416__;$i+=1){ ?><div class="option_r_ct clear">
-                    <div class="ind_ct_pho_r fl">
-                        <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[$i]["thumbimg"]); ?>" alt="">
-                    </div>
-                    <div class="ind_ct_main_r fr">
-                        <p class="ind_main_tit_r"><?php echo ($arrGroom[$i]["title"]); ?></p>
-                        <p class="ind_main_time_r"><?php echo ($arrGroom[$i]["time"]); ?> </p>
-                        <p class="ind_main_read_r">阅读(<?php echo ($arrGroom[$i]["read_times"]); ?>)</p>
-                    </div>
-                </div><?php } ?>
+            <?php if($intCount == 0): ?><div style="padding-bottom: 40px;">
+                    <p>
+                        暂无推荐<br>
+                    </p>
+                </div>
+
+                <?php elseif($intCount == 1): ?>
+                    <a href="/index.php/Index/Article/detail?arid=<?php echo ($arrGroom[0]["arid"]); ?>">
+                        <div class="option_r_ct clear">
+                            <div class="ind_ct_pho_r fl">
+                                <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[0]["thumbimg"]); ?>" alt="">
+                            </div>
+                            <div class="ind_ct_main_r fr">
+                                <p class="ind_main_tit_r"><?php echo ($arrGroom[0]["title"]); ?></p>
+                                <p class="ind_main_time_r"><?php echo ($arrGroom[0]["time"]); ?> </p>
+                                <p class="ind_main_read_r">阅读(<?php echo ($arrGroom[0]["read_times"]); ?>)</p>
+                            </div>
+                        </div>
+                    </a>
+                <?php else: ?>
+                <?php $__FOR_START_2032__=0;$__FOR_END_2032__=2;for($i=$__FOR_START_2032__;$i < $__FOR_END_2032__;$i+=1){ ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($arrGroom[$i]["arid"]); ?>">
+                        <div class="option_r_ct clear">
+                            <div class="ind_ct_pho_r fl">
+                                <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[$i]["thumbimg"]); ?>" alt="">
+                            </div>
+                            <div class="ind_ct_main_r fr">
+                                <p class="ind_main_tit_r"><?php echo ($arrGroom[$i]["title"]); ?></p>
+                                <p class="ind_main_time_r"><?php echo (date('Y-m-d H:i',strtotime($arrGroom[$i]["time"]))); ?> </p>
+                                <p class="ind_main_read_r">阅读(<?php echo ($arrGroom[$i]["read_times"]); ?>)</p>
+                            </div>
+                        </div>
+                    </a><?php } endif; ?>
         </div>
 
         <div class="in_art_option_r" >
-            <p class="option_r_tt">本类热门</p>
-            <?php $__FOR_START_2633__=2;$__FOR_END_2633__=6;for($i=$__FOR_START_2633__;$i < $__FOR_END_2633__;$i+=1){ ?><div class="option_r_ct clear">
-                    <div class="ind_ct_pho_r fl">
-                        <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[$i]["thumbimg"]); ?>" alt="">
-                    </div>
-                    <div class="ind_ct_main_r fr">
-                        <p class="ind_main_tit_r"><?php echo ($arrGroom[$i]["title"]); ?></p>
-                        <p class="ind_main_time_r"><?php echo ($arrGroom[$i]["time"]); ?> </p>
-                        <p class="ind_main_read_r">阅读(<?php echo ($arrGroom[$i]["read_times"]); ?>)</p>
-                    </div>
-                </div><?php } ?>
+
+            <?php if($intCount < 2): else: ?>
+                <p class="option_r_tt">本类热门</p>
+                    <?php $__FOR_START_12649__=2;$__FOR_END_12649__=$intCount;for($i=$__FOR_START_12649__;$i < $__FOR_END_12649__;$i+=1){ ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($arrGroom[$i]["arid"]); ?>">
+                            <div class="option_r_ct clear">
+                                <div class="ind_ct_pho_r fl">
+                                    <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[$i]["thumbimg"]); ?>" alt="">
+                                </div>
+                                <div class="ind_ct_main_r fr">
+                                    <p class="ind_main_tit_r"><?php echo ($arrGroom[$i]["title"]); ?></p>
+                                    <p class="ind_main_time_r"><?php echo (date('Y-m-d H:i',strtotime($arrGroom[$i]["time"]))); ?> </p>
+                                    <p class="ind_main_read_r">阅读(<?php echo ($arrGroom[$i]["read_times"]); ?>)</p>
+                                </div>
+                            </div>
+                        </a><?php } endif; ?>
 
             <div class="option_r_ct clear">
 
@@ -178,7 +215,7 @@
         var mySwiper4 = new Swiper('#swiper-container4', {
             pagination : '.swiper-pagination',
         });
-
+        $(".nav_wrap .nav a").eq(1).addClass('active');
     }
 </script>
 </html>
