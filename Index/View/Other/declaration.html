@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中创产业研究院</title>
+    <link rel="shortcut icon" href="{$Think.INDEX_IMAGES_URL}favicon.ico">
+    <meta name="description" content="中创产业研究院于2014年正式成立，由国内外著名高校支持，中大创新谷、中大创投和各知名产业集团联合筹措成立的新型科研组织。中创产业研究院以“研究产业，服务产业，发展产业”为理念，以构建新兴产业发展研究基地和智库为基本方向，为国家产业发展提供智库支持，促进产业投融资活动的高效开展。中创产业研究院自成立以来，已联合政府部门、高校院所、社会机构等举办多场产业论坛，并发表多篇行业研究报告。同时，还与各行业专业平台联合出版发行了《众筹之路》和《六众之路》等书籍。" />
+    <meta name="keywords" content="中创产业研究院、研究产业、服务产业、发展产业"/>
+    <link rel="stylesheet" href="{$Think.INDEX_CSS_URL}common.css">
+    <link rel="stylesheet" href="{$Think.INDEX_CSS_URL}otherPartner.css">
+</head>
+<body style="padding-top:126px;">
+<!--  search,nav begin-->
+<include file="./Index/View/Common/header.html"/>
+<!--  search,nav end>-->
+
+
+<!--  main begin-->
+<div class="other_main clear">
+    <div class="left_nav fl">
+        <a href="__MODULE__/Other/contact">
+            <p class="left_nav_p fl clear">
+                <span class="fl">联系我们</span>
+                <img  class="left_nav_jt fl" src="{$Think.INDEX_IMAGES_URL}other-jt-white.png" alt="">
+            </p>
+        </a>
+        <a href="__MODULE__/Other/partner">
+            <p class="left_nav_p fl clear">
+                <span class="fl">合作伙伴</span>
+                <img  class="left_nav_jt fl" src="{$Think.INDEX_IMAGES_URL}other-jt-white.png" alt="">
+            </p>
+        </a>
+
+        <a href="__MODULE__/Other/declaration">
+            <p class="left_nav_p fl clear">
+                <span class="fl" style="color:#ce1d19">法律声明</span>
+                <img  class="left_nav_jt fl" src="{$Think.INDEX_IMAGES_URL}other-jt-red.png" alt="">
+            </p>
+        </a>
+    </div>
+
+    <div class="right_main_leg fl">
+        {$arrData['value']}
+
+    </div>
+</div>
+<!--  main end-->
+
+<!-- footer begin -->
+<include file="./Index/View/Common/footer.html"/>
+<!-- footer end -->
+</body>
+</html>

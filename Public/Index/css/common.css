@@ -156,3 +156,11 @@ input{font-size:16px;color:#1e1e1e;border:none;outline:none}
 .in_footer a:hover{
 	color: #ce1d19;
 }
+
+.years{
+	color:#666;
+}
+
+.years_active{
+	color: #ce1d19;
+}

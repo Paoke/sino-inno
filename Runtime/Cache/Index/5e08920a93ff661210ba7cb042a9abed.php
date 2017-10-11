@@ -45,7 +45,7 @@
         <a href="/index.php/Index/Index/index" class="fl">首页</a>
         <a href="/index.php/Index/Article/article?acid=1" class="fl">产业方向</a>
         <a href="/index.php/Index/Article/trade" class="fl">行业资讯</a>
-        <a href="aboutUsIntroduce.html" class="fl">关于我们</a>
+        <a href="/index.php/Index/About/introduce" class="fl">关于我们</a>
     </div>
 </div>
 <!--  search,nav end>-->
@@ -83,7 +83,7 @@
             </div>
         </a>
 
-        <a href="aboutUsDev.html">
+        <a href="/index.php/Index/About/develop?time=<?php echo ($arrDevelop["time"]); ?>">
             <div class="aun_list" id="about_team">
                 <div class="aun_omr_cn_mask" id="mask3"></div>
                 <div class="aun_open_box">
@@ -154,7 +154,7 @@
 <!-- footer begin -->
 <div class="in_footer">
     <p class="in_footer_link">
-        <a href="">关于我们</a>
+        <a href="/index.php/Index/About/introduce">关于我们</a>
         <a href="">联系我们</a>
         <a href="">合作伙伴</a>
         <a href="">法律声明</a>

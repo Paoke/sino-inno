@@ -5,12 +5,13 @@
 */
 
 .about_us_navbox {
+    width: 1920px;
     position: fixed;
     top: 126px;
     left: 50%;
     -webkit-transform:translateX(-50%);
     transform:translateX(-50%);
-    background-color:rgb(180,180,180);
+    background-color:#e6e6e6;
     height: 162px;
     z-index: 9;
 }

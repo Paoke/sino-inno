@@ -31,6 +31,7 @@ class ArticleController extends CommonController
 
     public function detail($arid){
 
+        D('article')->where("arid=$arid")->setInc('read_times');
         $articleModel=new ArticleModel();
         $arrData=D('article')->where("arid=$arid")->find();
 
@@ -61,6 +62,7 @@ class ArticleController extends CommonController
 
     public function tradeDetail($arid){
 
+        D('article')->where("arid=$arid")->setInc('read_times');
         $articleModel=new ArticleModel();
         $arrData=D('article')->where("arid=$arid")->find();
 

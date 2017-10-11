@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中创产业研究院</title>
+    <link rel="shortcut icon" href="{$Think.INDEX_IMAGES_URL}favicon.ico">
+    <meta name="description" content="中创产业研究院于2014年正式成立，由国内外著名高校支持，中大创新谷、中大创投和各知名产业集团联合筹措成立的新型科研组织。中创产业研究院以“研究产业，服务产业，发展产业”为理念，以构建新兴产业发展研究基地和智库为基本方向，为国家产业发展提供智库支持，促进产业投融资活动的高效开展。中创产业研究院自成立以来，已联合政府部门、高校院所、社会机构等举办多场产业论坛，并发表多篇行业研究报告。同时，还与各行业专业平台联合出版发行了《众筹之路》和《六众之路》等书籍。" />
+    <meta name="keywords" content="中创产业研究院、研究产业、服务产业、发展产业"/>
+    <link rel="stylesheet" href="{$Think.INDEX_CSS_URL}common.css">
+    <link rel="stylesheet" href="{$Think.INDEX_CSS_URL}aboutUs.css">
+</head>
+<body style="padding-top:126px;">
+<!--  search,nav begin-->
+<include file="./Index/View/Common/header.html"/>
+<!--  search,nav end>-->
+
+<!-- banner start -->
+<div class="about_us_navbox">
+    <div class="about_us_nav">
+        <a href="__MODULE__/About/introduce">
+            <div class="aun_list " id="about_touwho">
+                <div class="aun_omr_cn_mask" id="mask1"></div>
+                <div class="aun_open_box">
+                    <div class="aun_open_message">
+                        <div class="aun_om_right">
+                            <div class="aun_omr_cn">我院简介</div>
+                        </div>
+                        <div class="clear_both"></div>
+                    </div>
+                </div>
+                <div class="aun_colse_box">我院简介</div>
+            </div>
+        </a>
+
+        <a href="__MODULE__/About/team">
+            <div class="aun_list" id="about_gd">
+                <div class="aun_omr_cn_mask" id="mask2"></div>
+                <div class="aun_open_box">
+                    <div class="aun_open_message">
+                        <div class="aun_om_right">
+                            <div class="aun_omr_cn">团队成员</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aun_colse_box">团队成员</div>
+            </div>
+        </a>
+
+        <a href="__MODULE__/About/develop?time={$time}">
+            <div class="aun_list select_aunlist" id="about_team">
+                <div class="aun_omr_cn_mask" id="mask3"  style="display: none;"></div>
+                <div class="aun_open_box">
+                    <div class="aun_open_message">
+                        <div class="aun_om_right">
+                            <div class="aun_omr_cn">发展历程</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aun_colse_box">发展历程</div>
+            </div>
+        </a>
+        <div class="clear_both"></div>
+    </div>
+</div>
+<!-- banner end -->
+
+<div class="div_fix_wrap">
+    <!-- fix_nav start -->
+    <div class="dev_fix">
+        <p class="dev_fix_nav">
+            <span style="margin-right:96px">发展历程</span>
+            <foreach name="arrTime" item="vo">
+                <if condition="$time eq $vo['time']">
+                    <a href="__MODULE__/About/develop?time={$vo.time}" style="color: #ce1d19;"><span>{$vo.time}</span></a><else/><a href="__MODULE__/About/develop?time={$vo.time}" style="color:#666;"><span>{$vo.time}</span></a>
+                </if>
+            </foreach>
+        </p>
+        <div class="dev_fix_time">
+            <p class="dev_fix_year">{$time}</p>
+            <!-- 				<a class="div_fix_date">2016.12.03</a>
+                            <a class="div_fix_date">2016.09.24</a>
+                            <a class="div_fix_date">2016.08.13</a>
+                            <a class="div_fix_date">2016.06.25</a> -->
+        </div>
+    </div>
+    <!-- fix_nav end -->
+    <div class="dev_main">
+        {$arrData['value']}
+    </div>
+</div>
+<!-- footer begin -->
+<include file="./Index/View/Common/footer.html"/>
+<!-- footer end -->
+</body>
+<script src="{$Think.INDEX_JS_URL}jquery-3.0.0.min.js"></script>
+<script src="{$Think.INDEX_JS_URL}jquery.min.js"></script>
+<script src="{$Think.INDEX_JS_URL}common.js"></script>
+<script>
+    $(".nav a").eq(3).addClass('active');
+
+    $("#about_touwho").hover(function () {
+        $(".aun_list").removeClass("select_aunlist");
+        $(this).addClass("select_aunlist");
+        $("#mask1").hide();
+        $("#mask2,#mask3").show();
+    }, function () {
+        $(".aun_list").removeClass("select_aunlist");
+        $("#about_team").addClass("select_aunlist");
+        $("#mask3").hide();
+        $("#mask2,#mask1").show();
+    });
+
+    $("#about_gd").hover(function () {
+        $(".aun_list").removeClass("select_aunlist");
+        $(this).addClass("select_aunlist");
+        $("#mask2").hide();
+        $("#mask1,#mask3").show();
+    }, function () {
+        $(".aun_list").removeClass("select_aunlist");
+        $("#about_team").addClass("select_aunlist");
+        $("#mask3").hide();
+        $("#mask2,#mask1").show();
+    });
+
+    $("#about_team").hover(function () {
+        $(".aun_list").removeClass("select_aunlist");
+        $(this).addClass("select_aunlist");
+        $("#mask3").hide();
+        $("#mask2,#mask1").show();
+    }, function () {
+        $(".aun_list").removeClass("select_aunlist");
+        $("#about_team").addClass("select_aunlist");
+        $("#mask3").hide();
+        $("#mask2,#mask1").show();
+    });
+
+    var i=0;
+    $($("a[name='time']")).each(function(){
+        if(i==0){
+            $('.dev_fix_time').append('<a class="div_fix_date" href="#time'+(i+1)+'" style="color: #ce1d19">'+$(this).parent().text()+'</a><br/>');
+        }else{
+            $('.dev_fix_time').append('<a class="div_fix_date" href="#time'+(i+1)+'">'+$(this).parent().text()+'</a><br/>');
+        }
+
+        $(this).attr("id", 'time'+(i+1));
+        i++;
+    });
+
+    $(function(){
+        //锚点跳转滑动效果
+        $('a[href*=#],area[href*=class]').click(function() {
+
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                $('.dev_fix_time a').each(function() {
+                    $(this).css('color', '#666');
+                    }
+                );
+                $(this).css('color','#ce1d19');
+                var $target = $(this.hash);
+                $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+                if ($target.length) {
+                    var targetOffset = $target.offset().top-380;
+                    console.log(targetOffset);
+                    $('html,body').animate({
+                            scrollTop: targetOffset
+                        },
+                        1000);
+
+                    return false;
+                }
+            }
+        });
+    })
+
+</script>
+</html>

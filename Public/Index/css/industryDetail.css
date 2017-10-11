@@ -62,11 +62,9 @@
 }
 .inDet_main_left_ct p{
 	text-indent:2em;
-	margin-bottom: 30px;
+	line-height: 1.8em;
 }
 .inDet_main_left_ct img{
-	width: 620px;
-	height: 380px;
 	margin: 0 auto 30px;
 	display: block;
 }
