@@ -40,7 +40,7 @@ class ArticleController extends CommonControllers
     }
 
     public function articleList(){
-        $arrData = D('article')->order('arid desc')->select();
+        $arrData = D('article')->order('time desc,arid desc')->select();
         $arrCategories=D('article_category')->select();
         $this->assign('arrData', $arrData);
         $this->assign('size', sizeof($arrData));

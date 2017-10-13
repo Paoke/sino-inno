@@ -88,7 +88,7 @@
                     <a href="__MODULE__/Article/detail?arid={$arrGroom[0].arid}">
                         <div class="option_r_ct clear">
                             <div class="ind_ct_pho_r fl">
-                                <img src="{$Think.UPLOAD_URL}{$arrGroom[0].thumbimg}" alt="">
+                                <img src="{$Think.UPLOAD_URL}{$arrGroom[0].thumbimg}" alt="" style="width: 100px;height: 76px;">
                             </div>
                             <div class="ind_ct_main_r fr">
                                 <p class="ind_main_tit_r">{$arrGroom[0].title}</p>
@@ -102,7 +102,7 @@
                     <a href="__MODULE__/Article/detail?arid={$arrGroom[$i].arid}">
                         <div class="option_r_ct clear">
                             <div class="ind_ct_pho_r fl">
-                                <img src="{$Think.UPLOAD_URL}{$arrGroom[$i].thumbimg}" alt="">
+                                <img src="{$Think.UPLOAD_URL}{$arrGroom[$i].thumbimg}" alt="" style="width: 100px;height: 76px;">
                             </div>
                             <div class="ind_ct_main_r fr">
                                 <p class="ind_main_tit_r">{$arrGroom[$i].title}</p>
@@ -125,7 +125,7 @@
                         <a href="__MODULE__/Article/detail?arid={$arrGroom[$i].arid}">
                             <div class="option_r_ct clear">
                                 <div class="ind_ct_pho_r fl">
-                                    <img src="{$Think.UPLOAD_URL}{$arrGroom[$i].thumbimg}" alt="">
+                                    <img src="{$Think.UPLOAD_URL}{$arrGroom[$i].thumbimg}" alt="" style="width: 100px;height: 76px;">
                                 </div>
                                 <div class="ind_ct_main_r fr">
                                     <p class="ind_main_tit_r">{$arrGroom[$i].title}</p>
@@ -182,6 +182,9 @@
     window.onload = function(){
         var mySwiper4 = new Swiper('#swiper-container4', {
             pagination : '.swiper-pagination',
+            paginationClickable :true,
+            loop:true,
+            autoplay: 3000
         });
         $(".nav_wrap .nav a").eq(1).addClass('active');
     }

@@ -17,7 +17,7 @@
     <div class="in_search clear">
         <div class="in_search_left fl clear">
             <div class="in_search_logo fl">
-                <img src="<?php echo (INDEX_IMAGES_URL); ?>sy-logo.png" alt="">
+                <a href="/index.php/Index/Index/index"><img src="<?php echo (INDEX_IMAGES_URL); ?>sy-logo.png" alt=""></a>
             </div>
             <p class="in_search_left_word fl">聚合创新，合作共赢</p>
         </div>
@@ -78,7 +78,7 @@
             <?php if(is_array($arrGroom)): foreach($arrGroom as $key=>$vo): ?><a href="/index.php/Index/Article/tradeDetail?arid=<?php echo ($vo["arid"]); ?>">
                     <div class="option_r_ct clear">
                         <div class="ind_ct_pho_r fl">
-                            <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[0]["thumbimg"]); ?>" alt="">
+                            <img src="<?php echo (UPLOAD_URL); echo ($vo["thumbimg"]); ?>" alt="">
                         </div>
                         <div class="ind_ct_main_r fr">
                             <p class="ind_main_tit_r"><?php echo ($vo["title"]); ?>...</p>

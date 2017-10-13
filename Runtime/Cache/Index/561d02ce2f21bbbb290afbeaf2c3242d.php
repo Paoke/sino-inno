@@ -16,7 +16,7 @@
     <div class="in_search clear">
         <div class="in_search_left fl clear">
             <div class="in_search_logo fl">
-                <img src="<?php echo (INDEX_IMAGES_URL); ?>sy-logo.png" alt="">
+                <a href="/index.php/Index/Index/index"><img src="<?php echo (INDEX_IMAGES_URL); ?>sy-logo.png" alt=""></a>
             </div>
             <p class="in_search_left_word fl">聚合创新，合作共赢</p>
         </div>
@@ -62,7 +62,7 @@
                         <?php case "3": ?>医疗产业<?php break;?>
                         <?php case "4": ?>新材料产业<?php break;?>
                         <?php case "5": ?>先进制造产业<?php break;?>
-                        <?php default: ?>default<?php endswitch;?>
+                        <?php default: ?>行业资讯<?php endswitch;?>
 
                     <span class="mar_left">来源： <?php echo ($arrData["from"]); ?></span>
                     <span class="mar_left">时间：<?php echo (date('Y-m-d H:i',strtotime($arrData["time"]))); ?> </span>
@@ -103,22 +103,22 @@
                     <a href="/index.php/Index/Article/article?acid=5">先进制造产业</a><?php endif; ?>
             </div>
         </div>
-
-            <div class="in_art_option_r">
-                <p class="option_r_tt">本类热门</p>
-                <?php if(is_array($arrGroom)): foreach($arrGroom as $key=>$vo): ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($vo["arid"]); ?>">
-                        <div class="option_r_ct clear">
-                            <div class="ind_ct_pho_r fl">
-                                <img src="<?php echo (UPLOAD_URL); echo ($vo["thumbimg"]); ?>" alt="">
+            <?php if($arrGroom[0]['arid'] == null): else: ?>
+                <div class="in_art_option_r">
+                    <p class="option_r_tt">本类热门</p>
+                    <?php if(is_array($arrGroom)): foreach($arrGroom as $key=>$vo): ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($vo["arid"]); ?>">
+                            <div class="option_r_ct clear">
+                                <div class="ind_ct_pho_r fl">
+                                    <img src="<?php echo (UPLOAD_URL); echo ($vo["thumbimg"]); ?>" alt="" style="width:100px;height: 76px;">
+                                </div>
+                                <div class="ind_ct_main_r fr">
+                                    <p class="ind_main_tit_r"><?php echo ($vo["title"]); ?></p>
+                                    <p class="ind_main_time_r"><?php echo (date('Y-m-d H:i',strtotime($vo["time"]))); ?> </p>
+                                    <p class="ind_main_read_r">阅读(<?php echo ($vo["read_times"]); ?>)</p>
+                                </div>
                             </div>
-                            <div class="ind_ct_main_r fr">
-                                <p class="ind_main_tit_r"><?php echo ($vo["title"]); ?></p>
-                                <p class="ind_main_time_r"><?php echo (date('Y-m-d H:i',strtotime($vo["time"]))); ?> </p>
-                                <p class="ind_main_read_r">阅读(<?php echo ($vo["read_times"]); ?>)</p>
-                            </div>
-                        </div>
-                    </a><?php endforeach; endif; ?>
-            </div>
+                        </a><?php endforeach; endif; ?>
+                </div><?php endif; ?>
     </div>
 </div>
 

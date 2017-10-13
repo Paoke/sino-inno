@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="<?php echo (INDEX_CSS_URL); ?>index.css">
 </head>
 <body class="in_body">
+
+	<img src="<?php echo (INDEX_IMAGES_URL); ?>logo.png" style="display:none;" alt="<?php echo (INDEX_IMAGES_URL); ?>logo.png">
 	<!--  banner,nav begin-->
 		<div class="in_head_wrap">
 			<div class="in_search clear">
@@ -58,7 +60,7 @@
 					<img class="in_nav_icon" src="<?php echo (INDEX_IMAGES_URL); ?>home-icon-news.png" alt="">
 					<p class="in_nav_l">行业资讯</p>
 				</a>
-				<a href="aboutUsIntroduce.html" class="in_nav_a fl">
+				<a href="/index.php/Index/About/introduce" class="in_nav_a fl">
 					<img class="in_nav_icon" src="<?php echo (INDEX_IMAGES_URL); ?>home-icon-about-us.png" alt="">
 					<p class="in_nav_l">关于我们</p>
 				</a>
@@ -78,14 +80,15 @@
 	<!--  news begin-->
 		<p class="in_news_title">最新资讯</p>
 		<div class="in_news clear">
-			<?php $__FOR_START_5687__=0;$__FOR_END_5687__=3;for($i=$__FOR_START_5687__;$i < $__FOR_END_5687__;$i+=1){ ?><div class="in_news_section fl" style="background:url(<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["indeximg"]); ?>)";>
+			<?php $__FOR_START_10383__=0;$__FOR_END_10383__=3;for($i=$__FOR_START_10383__;$i < $__FOR_END_10383__;$i+=1){ ?><div class="in_news_section fl" style="background:url(<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["indeximg"]); ?>)";>
 					<div class="in_news_mask"></div>
 					<p class="in_sec_tit">
 						<?php echo ($arrArticle[$i]["title"]); ?>
 					</p>
 					<p class="in_sec_intro"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
-
-					<a href="/index.php/Index/Article/detail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>" class="know_more">了解更多</a>
+					<?php if($arrArticle[$i]['acid'] == 6): ?><a href="/index.php/Index/Article/tradeDetail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>" class="know_more">了解更多</a>
+						<?php else: ?>
+						<a href="/index.php/Index/Article/detail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>" class="know_more">了解更多</a><?php endif; ?>
 				</div><?php } ?>
 		</div>
 	<!--  news end-->
@@ -93,24 +96,11 @@
 	<!--  article begin-->
 		<div class="in_art_intro clear">
 			<span class="fl">热文推荐</span>
-			<a href=""><p class="fr">更多<img src="<?php echo (INDEX_IMAGES_URL); ?>sy-gd-wdj.png" alt=""></p></a>
+			<a href="/index.php/Index/Article/article?acid=1"><p class="fr">更多<img src="<?php echo (INDEX_IMAGES_URL); ?>sy-gd-wdj.png" alt=""></p></a>
 		</div>
 
 		<div class="in_art_content ">
-			<?php $__FOR_START_26532__=3;$__FOR_END_26532__=5;for($i=$__FOR_START_26532__;$i < $__FOR_END_26532__;$i+=1){ ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>">
-					<div class="in_art_option clear">
-						<div class="in_ct_pho fl">
-							<img src="<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["thumbimg"]); ?>" alt="" style="width: 320px;height: 230px;">
-						</div>
-						<div class="in_ct_main fr">
-							<p class="in_main_tit"><?php echo ($arrArticle[$i]["title"]); ?></p>
-							<p class="in_main_ct"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
-							<p class="in_main_time"><?php echo (date('Y-m-d H:i',strtotime($arrArticle[$i]["time"]))); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
-						</div>
-					</div>
-				</a><?php } ?>
-			<div id="more" style="display: none;">
-				<?php $__FOR_START_18701__=5;$__FOR_END_18701__=9;for($i=$__FOR_START_18701__;$i < $__FOR_END_18701__;$i+=1){ ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>">
+			<?php $__FOR_START_1820__=3;$__FOR_END_1820__=7;for($i=$__FOR_START_1820__;$i < $__FOR_END_1820__;$i+=1){ if($arrArticle[$i]['acid'] == 6): ?><a href="/index.php/Index/Article/tradeDetail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>">
 						<div class="in_art_option clear">
 							<div class="in_ct_pho fl">
 								<img src="<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["thumbimg"]); ?>" alt="" style="width: 320px;height: 230px;">
@@ -121,7 +111,46 @@
 								<p class="in_main_time"><?php echo (date('Y-m-d H:i',strtotime($arrArticle[$i]["time"]))); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
 							</div>
 						</div>
-					</a><?php } ?>
+					</a>
+					<?php else: ?>
+					<a href="/index.php/Index/Article/detail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>">
+						<div class="in_art_option clear">
+							<div class="in_ct_pho fl">
+								<img src="<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["thumbimg"]); ?>" alt="" style="width: 320px;height: 230px;">
+							</div>
+							<div class="in_ct_main fr">
+								<p class="in_main_tit"><?php echo ($arrArticle[$i]["title"]); ?></p>
+								<p class="in_main_ct"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
+								<p class="in_main_time"><?php echo (date('Y-m-d H:i',strtotime($arrArticle[$i]["time"]))); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
+							</div>
+						</div>
+					</a><?php endif; } ?>
+			<div id="more" style="display: none;">
+				<?php $__FOR_START_16165__=7;$__FOR_END_16165__=11;for($i=$__FOR_START_16165__;$i < $__FOR_END_16165__;$i+=1){ if($arrArticle[$i]['acid'] == 6): ?><a href="/index.php/Index/Article/tradeDetail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>">
+							<div class="in_art_option clear">
+								<div class="in_ct_pho fl">
+									<img src="<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["thumbimg"]); ?>" alt="" style="width: 320px;height: 230px;">
+								</div>
+								<div class="in_ct_main fr">
+									<p class="in_main_tit"><?php echo ($arrArticle[$i]["title"]); ?></p>
+									<p class="in_main_ct"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
+									<p class="in_main_time"><?php echo (date('Y-m-d H:i',strtotime($arrArticle[$i]["time"]))); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
+								</div>
+							</div>
+						</a>
+					<?php else: ?>
+						<a href="/index.php/Index/Article/detail?arid=<?php echo ($arrArticle[$i]["arid"]); ?>">
+							<div class="in_art_option clear">
+								<div class="in_ct_pho fl">
+									<img src="<?php echo (UPLOAD_URL); echo ($arrArticle[$i]["thumbimg"]); ?>" alt="" style="width: 320px;height: 230px;">
+								</div>
+								<div class="in_ct_main fr">
+									<p class="in_main_tit"><?php echo ($arrArticle[$i]["title"]); ?></p>
+									<p class="in_main_ct"><?php echo ($arrArticle[$i]["summary"]); ?>......</p>
+									<p class="in_main_time"><?php echo (date('Y-m-d H:i',strtotime($arrArticle[$i]["time"]))); ?><span class="in_main_read">阅读(<?php echo ($arrArticle[$i]["read_times"]); ?>)</span></p>
+								</div>
+							</div>
+						</a><?php endif; } ?>
 			</div>
 		</div>
 		<div class="in_loadingmore"></div>
@@ -234,6 +263,7 @@
 	var mySwiper1 = new Swiper('#swiper-container1', {
 		pagination : '.swiper-pagination',
 		paginationClickable :true,
+		loop:true,
 		autoplay: 3000
 	})
 
@@ -245,11 +275,13 @@
 		     var index = mySwiper2.activeIndex;
 		     $(".in_act_main").eq(index).addClass('in_main_active').siblings().removeClass('in_main_active');
 		    }
+
 	})
 
 	var mySwiper3 = new Swiper('#swiper-container3', {
 		pagination : '.swiper-pagination',
 		paginationClickable :true,
+		loop:true,
 		autoplay: 3000
 	})
 

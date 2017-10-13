@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="{$Think.INDEX_CSS_URL}index.css">
 </head>
 <body class="in_body">
+
+	<img src="{$Think.INDEX_IMAGES_URL}logo.png" style="display:none;" alt="{$Think.INDEX_IMAGES_URL}logo.png">
 	<!--  banner,nav begin-->
 		<div class="in_head_wrap">
 			<div class="in_search clear">
@@ -60,7 +62,7 @@
 					<img class="in_nav_icon" src="{$Think.INDEX_IMAGES_URL}home-icon-news.png" alt="">
 					<p class="in_nav_l">行业资讯</p>
 				</a>
-				<a href="aboutUsIntroduce.html" class="in_nav_a fl">
+				<a href="__MODULE__/About/introduce" class="in_nav_a fl">
 					<img class="in_nav_icon" src="{$Think.INDEX_IMAGES_URL}home-icon-about-us.png" alt="">
 					<p class="in_nav_l">关于我们</p>
 				</a>
@@ -87,8 +89,11 @@
 						{$arrArticle[$i].title}
 					</p>
 					<p class="in_sec_intro">{$arrArticle[$i].summary}......</p>
-
-					<a href="__MODULE__/Article/detail?arid={$arrArticle[$i].arid}" class="know_more">了解更多</a>
+					<if condition="$arrArticle[$i]['acid'] eq 6">
+						<a href="__MODULE__/Article/tradeDetail?arid={$arrArticle[$i].arid}" class="know_more">了解更多</a>
+						<else/>
+						<a href="__MODULE__/Article/detail?arid={$arrArticle[$i].arid}" class="know_more">了解更多</a>
+					</if>
 				</div>
 			</for>
 		</div>
@@ -97,26 +102,25 @@
 	<!--  article begin-->
 		<div class="in_art_intro clear">
 			<span class="fl">热文推荐</span>
-			<a href=""><p class="fr">更多<img src="{$Think.INDEX_IMAGES_URL}sy-gd-wdj.png" alt=""></p></a>
+			<a href="__MODULE__/Article/article?acid=1"><p class="fr">更多<img src="{$Think.INDEX_IMAGES_URL}sy-gd-wdj.png" alt=""></p></a>
 		</div>
 
 		<div class="in_art_content ">
-			<for start="3" end="5">
-				<a href="__MODULE__/Article/detail?arid={$arrArticle[$i].arid}">
-					<div class="in_art_option clear">
-						<div class="in_ct_pho fl">
-							<img src="{$Think.UPLOAD_URL}{$arrArticle[$i].thumbimg}" alt="" style="width: 320px;height: 230px;">
+			<for start="3" end="7">
+				<if condition="$arrArticle[$i]['acid'] eq 6">
+					<a href="__MODULE__/Article/tradeDetail?arid={$arrArticle[$i].arid}">
+						<div class="in_art_option clear">
+							<div class="in_ct_pho fl">
+								<img src="{$Think.UPLOAD_URL}{$arrArticle[$i].thumbimg}" alt="" style="width: 320px;height: 230px;">
+							</div>
+							<div class="in_ct_main fr">
+								<p class="in_main_tit">{$arrArticle[$i].title}</p>
+								<p class="in_main_ct">{$arrArticle[$i].summary}......</p>
+								<p class="in_main_time">{$arrArticle[$i].time|strtotime|date='Y-m-d H:i',###}<span class="in_main_read">阅读({$arrArticle[$i].read_times})</span></p>
+							</div>
 						</div>
-						<div class="in_ct_main fr">
-							<p class="in_main_tit">{$arrArticle[$i].title}</p>
-							<p class="in_main_ct">{$arrArticle[$i].summary}......</p>
-							<p class="in_main_time">{$arrArticle[$i].time|strtotime|date='Y-m-d H:i',###}<span class="in_main_read">阅读({$arrArticle[$i].read_times})</span></p>
-						</div>
-					</div>
-				</a>
-			</for>
-			<div id="more" style="display: none;">
-				<for start="5" end="9">
+					</a>
+					<else/>
 					<a href="__MODULE__/Article/detail?arid={$arrArticle[$i].arid}">
 						<div class="in_art_option clear">
 							<div class="in_ct_pho fl">
@@ -129,6 +133,37 @@
 							</div>
 						</div>
 					</a>
+				</if>
+			</for>
+			<div id="more" style="display: none;">
+				<for start="7" end="11">
+					<if condition="$arrArticle[$i]['acid'] eq 6">
+						<a href="__MODULE__/Article/tradeDetail?arid={$arrArticle[$i].arid}">
+							<div class="in_art_option clear">
+								<div class="in_ct_pho fl">
+									<img src="{$Think.UPLOAD_URL}{$arrArticle[$i].thumbimg}" alt="" style="width: 320px;height: 230px;">
+								</div>
+								<div class="in_ct_main fr">
+									<p class="in_main_tit">{$arrArticle[$i].title}</p>
+									<p class="in_main_ct">{$arrArticle[$i].summary}......</p>
+									<p class="in_main_time">{$arrArticle[$i].time|strtotime|date='Y-m-d H:i',###}<span class="in_main_read">阅读({$arrArticle[$i].read_times})</span></p>
+								</div>
+							</div>
+						</a>
+					<else/>
+						<a href="__MODULE__/Article/detail?arid={$arrArticle[$i].arid}">
+							<div class="in_art_option clear">
+								<div class="in_ct_pho fl">
+									<img src="{$Think.UPLOAD_URL}{$arrArticle[$i].thumbimg}" alt="" style="width: 320px;height: 230px;">
+								</div>
+								<div class="in_ct_main fr">
+									<p class="in_main_tit">{$arrArticle[$i].title}</p>
+									<p class="in_main_ct">{$arrArticle[$i].summary}......</p>
+									<p class="in_main_time">{$arrArticle[$i].time|strtotime|date='Y-m-d H:i',###}<span class="in_main_read">阅读({$arrArticle[$i].read_times})</span></p>
+								</div>
+							</div>
+						</a>
+					</if>
 				</for>
 			</div>
 		</div>
@@ -240,6 +275,7 @@
 	var mySwiper1 = new Swiper('#swiper-container1', {
 		pagination : '.swiper-pagination',
 		paginationClickable :true,
+		loop:true,
 		autoplay: 3000
 	})
 
@@ -251,11 +287,13 @@
 		     var index = mySwiper2.activeIndex;
 		     $(".in_act_main").eq(index).addClass('in_main_active').siblings().removeClass('in_main_active');
 		    }
+
 	})
 
 	var mySwiper3 = new Swiper('#swiper-container3', {
 		pagination : '.swiper-pagination',
 		paginationClickable :true,
+		loop:true,
 		autoplay: 3000
 	})
 

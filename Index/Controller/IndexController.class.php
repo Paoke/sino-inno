@@ -10,7 +10,7 @@ class IndexController extends CommonController
         $arrBanner=D('banner')->where('status=1')->order('orderid asc')->select();
         $arrArticle=D('article')->where('status=1')
             ->field('arid,title,summary,acid,read_times,indeximg,thumbimg,from,time')
-            ->limit(9)->order('arid desc')
+            ->limit(11)->order('time desc,arid desc')
             ->select();
         $arrActivity=D('activity')->where('status=1')->limit(3)->order('acid desc')->select();
 

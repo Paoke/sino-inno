@@ -17,7 +17,7 @@
     <div class="in_search clear">
         <div class="in_search_left fl clear">
             <div class="in_search_logo fl">
-                <img src="<?php echo (INDEX_IMAGES_URL); ?>sy-logo.png" alt="">
+                <a href="/index.php/Index/Index/index"><img src="<?php echo (INDEX_IMAGES_URL); ?>sy-logo.png" alt=""></a>
             </div>
             <p class="in_search_left_word fl">聚合创新，合作共赢</p>
         </div>
@@ -104,7 +104,7 @@
                     <a href="/index.php/Index/Article/detail?arid=<?php echo ($arrGroom[0]["arid"]); ?>">
                         <div class="option_r_ct clear">
                             <div class="ind_ct_pho_r fl">
-                                <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[0]["thumbimg"]); ?>" alt="">
+                                <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[0]["thumbimg"]); ?>" alt="" style="width: 100px;height: 76px;">
                             </div>
                             <div class="ind_ct_main_r fr">
                                 <p class="ind_main_tit_r"><?php echo ($arrGroom[0]["title"]); ?></p>
@@ -114,10 +114,10 @@
                         </div>
                     </a>
                 <?php else: ?>
-                <?php $__FOR_START_31720__=0;$__FOR_END_31720__=2;for($i=$__FOR_START_31720__;$i < $__FOR_END_31720__;$i+=1){ ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($arrGroom[$i]["arid"]); ?>">
+                <?php $__FOR_START_10785__=0;$__FOR_END_10785__=2;for($i=$__FOR_START_10785__;$i < $__FOR_END_10785__;$i+=1){ ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($arrGroom[$i]["arid"]); ?>">
                         <div class="option_r_ct clear">
                             <div class="ind_ct_pho_r fl">
-                                <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[$i]["thumbimg"]); ?>" alt="">
+                                <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[$i]["thumbimg"]); ?>" alt="" style="width: 100px;height: 76px;">
                             </div>
                             <div class="ind_ct_main_r fr">
                                 <p class="ind_main_tit_r"><?php echo ($arrGroom[$i]["title"]); ?></p>
@@ -132,10 +132,10 @@
 
             <?php if($intCount < 2): else: ?>
                 <p class="option_r_tt">本类热门</p>
-                    <?php $__FOR_START_8705__=2;$__FOR_END_8705__=$intCount;for($i=$__FOR_START_8705__;$i < $__FOR_END_8705__;$i+=1){ ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($arrGroom[$i]["arid"]); ?>">
+                    <?php $__FOR_START_11846__=2;$__FOR_END_11846__=$intCount;for($i=$__FOR_START_11846__;$i < $__FOR_END_11846__;$i+=1){ ?><a href="/index.php/Index/Article/detail?arid=<?php echo ($arrGroom[$i]["arid"]); ?>">
                             <div class="option_r_ct clear">
                                 <div class="ind_ct_pho_r fl">
-                                    <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[$i]["thumbimg"]); ?>" alt="">
+                                    <img src="<?php echo (UPLOAD_URL); echo ($arrGroom[$i]["thumbimg"]); ?>" alt="" style="width: 100px;height: 76px;">
                                 </div>
                                 <div class="ind_ct_main_r fr">
                                     <p class="ind_main_tit_r"><?php echo ($arrGroom[$i]["title"]); ?></p>
@@ -214,6 +214,9 @@
     window.onload = function(){
         var mySwiper4 = new Swiper('#swiper-container4', {
             pagination : '.swiper-pagination',
+            paginationClickable :true,
+            loop:true,
+            autoplay: 3000
         });
         $(".nav_wrap .nav a").eq(1).addClass('active');
     }

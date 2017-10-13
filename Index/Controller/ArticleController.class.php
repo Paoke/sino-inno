@@ -17,7 +17,7 @@ class ArticleController extends CommonController
 
         $page=  getpage($intCount, 8);
         $arrShow=$page->show();
-        $arrData=$articleModel->search("acid=$acid and status=1", $page->firstRow.','.$page->listRows, "arid desc");
+        $arrData=$articleModel->search("acid=$acid and status=1", $page->firstRow.','.$page->listRows, "time desc,arid desc");
         $arrGroom=$articleModel->search("acid=$acid and status=1", 6, "read_times desc");
 
         $this->assign('arrShow',$arrShow);
@@ -36,7 +36,7 @@ class ArticleController extends CommonController
         $arrData=D('article')->where("arid=$arid")->find();
 
         $acid=$arrData['acid'];
-        $arrGroom=$articleModel->search("acid=$acid and status=1", 2, "read_times desc");
+        $arrGroom=$articleModel->search("acid=$acid and status=1 and arid !=$arid", 2, "read_times desc");
 
         $this->assign('arrData',$arrData);
         $this->assign('arrGroom',$arrGroom['rows']);
@@ -51,7 +51,7 @@ class ArticleController extends CommonController
 
         $page=  getpage($intCount, 8);
         $arrShow=$page->show();
-        $arrData=$articleModel->search("acid=6 and status=1", $page->firstRow.','.$page->listRows, "arid desc");
+        $arrData=$articleModel->search("acid=6 and status=1", $page->firstRow.','.$page->listRows, "time desc,arid desc");
         $arrGroom=$articleModel->search("acid=6 and status=1", 4, "read_times desc");
 
         $this->assign('arrShow',$arrShow);
@@ -67,7 +67,7 @@ class ArticleController extends CommonController
         $arrData=D('article')->where("arid=$arid")->find();
 
         $acid=$arrData['acid'];
-        $arrGroom=$articleModel->search("acid=$acid and status=1", 2, "read_times desc");
+        $arrGroom=$articleModel->search("acid=$acid and status=1 and arid !=$arid", 2, "read_times desc");
 
         $this->assign('arrData',$arrData);
         $this->assign('arrGroom',$arrGroom['rows']);

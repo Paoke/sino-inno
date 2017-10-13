@@ -31,7 +31,7 @@
                         <case value="3">医疗产业</case>
                         <case value="4">新材料产业</case>
                         <case value="5">先进制造产业</case>
-                        <default />default
+                        <default />行业资讯
                     </switch>
 
                     <span class="mar_left">来源： {$arrData.from}</span>
@@ -83,24 +83,27 @@
                 </if>
             </div>
         </div>
+            <if condition="$arrGroom[0]['arid'] eq null">
 
-            <div class="in_art_option_r">
-                <p class="option_r_tt">本类热门</p>
-                <foreach name="arrGroom" item="vo">
-                    <a href="__MODULE__/Article/detail?arid={$vo.arid}">
-                        <div class="option_r_ct clear">
-                            <div class="ind_ct_pho_r fl">
-                                <img src="{$Think.UPLOAD_URL}{$vo.thumbimg}" alt="">
+            <else/>
+                <div class="in_art_option_r">
+                    <p class="option_r_tt">本类热门</p>
+                    <foreach name="arrGroom" item="vo">
+                        <a href="__MODULE__/Article/detail?arid={$vo.arid}">
+                            <div class="option_r_ct clear">
+                                <div class="ind_ct_pho_r fl">
+                                    <img src="{$Think.UPLOAD_URL}{$vo.thumbimg}" alt="" style="width:100px;height: 76px;">
+                                </div>
+                                <div class="ind_ct_main_r fr">
+                                    <p class="ind_main_tit_r">{$vo.title}</p>
+                                    <p class="ind_main_time_r">{$vo.time|strtotime|date='Y-m-d H:i',###} </p>
+                                    <p class="ind_main_read_r">阅读({$vo.read_times})</p>
+                                </div>
                             </div>
-                            <div class="ind_ct_main_r fr">
-                                <p class="ind_main_tit_r">{$vo.title}</p>
-                                <p class="ind_main_time_r">{$vo.time|strtotime|date='Y-m-d H:i',###} </p>
-                                <p class="ind_main_read_r">阅读({$vo.read_times})</p>
-                            </div>
-                        </div>
-                    </a>
-                </foreach>
-            </div>
+                        </a>
+                    </foreach>
+                </div>
+            </if>
     </div>
 </div>
 

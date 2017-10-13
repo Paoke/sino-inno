@@ -16,7 +16,7 @@
     <div class="in_search clear">
         <div class="in_search_left fl clear">
             <div class="in_search_logo fl">
-                <img src="<?php echo (INDEX_IMAGES_URL); ?>sy-logo.png" alt="">
+                <a href="/index.php/Index/Index/index"><img src="<?php echo (INDEX_IMAGES_URL); ?>sy-logo.png" alt=""></a>
             </div>
             <p class="in_search_left_word fl">聚合创新，合作共赢</p>
         </div>
